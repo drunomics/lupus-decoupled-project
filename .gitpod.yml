@@ -7,7 +7,7 @@ tasks:
       ddev start -y
       ddev composer install
       ddev drush si -y --account-pass=admin --site-name='ddev_gitpod' standard
-      ddev drush en lupus_decoupled_ce_api lupus_decoupled_cors lupus_decoupled_menu -y
+      ddev drush en lupus_decoupled -y
     command: |
       ddev start -y
       gp ports await 8080 && gp preview $(gp url 8080)
