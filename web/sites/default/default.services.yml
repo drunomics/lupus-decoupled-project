@@ -35,8 +35,7 @@ parameters:
     # the cookie domain should start with a dot.
     #
     # @default none
-    # @todo: Set via enviornment variables.
-    cookie_domain: '.ddev.site'
+    # cookie_domain: '.example.com'
     #
     # Set the session ID string length. The length can be between 22 to 256. The
     # PHP recommended value is 48. See
