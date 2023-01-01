@@ -48,6 +48,10 @@ ports:
   # Ignore host https port
   - port: 8443
     onOpen: ignore
+  - port: 3000
+    onOpen: ignore
+  - port: 3433
+    onOpen: ignore
   # xdebug port
   - port: 9003
     onOpen: ignore

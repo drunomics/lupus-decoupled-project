@@ -6,7 +6,15 @@ webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
 xdebug_enabled: false
+# Used when running ddev on localhost,
+# accessible via http://lupus-nuxt.ddev.site.
 additional_hostnames: ["lupus-nuxt"]
+# Access via port is used when accessed via gitpod
+web_extra_exposed_ports:
+  - name: lupus-nuxt
+    container_port: 3000
+    http_port: 3000
+    https_port: 3433
 additional_fqdns: []
 database:
   type: mariadb
@@ -17,16 +25,20 @@ use_dns_when_possible: true
 composer_version: ""
 web_environment:
   - DRUPAL_BASE_URL=https://lupus-decoupled.ddev.site/ce-api
+  - NUXT_HOST=0.0.0.0
+  - NUXT_PORT=3000 
 nodejs_version: "16"
 
+web_extra_daemons:
+  - name: "nuxt"
+    # Launch the frontend, by default in dev-mode.
+    command: "npm run dev"
+    directory: /var/www/html/frontend
 hooks:
   post-start:
-    # Launch the frontend, by default in dev-mode. This will run it on port 3000, what is made availabel
-    # under http://lupus-nuxt.ddev.site
     - exec: |
         [[ -d frontend ]] || git clone https://github.com/drunomics/lupus-decoupled-nuxt-demo frontend
         cd frontend && npm i
-    - exec: cd frontend && npm run dev
 
 # Key features of ddev's config.yaml:
 
