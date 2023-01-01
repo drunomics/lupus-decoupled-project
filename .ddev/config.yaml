@@ -9,13 +9,12 @@ xdebug_enabled: false
 # Used when running ddev on localhost,
 # accessible via http://lupus-nuxt.ddev.site.
 additional_hostnames: ["lupus-nuxt"]
-# Used when accessed via gitpod
+# Access via port is used when accessed via gitpod
 web_extra_exposed_ports:
   - name: lupus-nuxt
     container_port: 3000
     http_port: 3000
     https_port: 3433
-
 additional_fqdns: []
 database:
   type: mariadb
@@ -26,6 +25,8 @@ use_dns_when_possible: true
 composer_version: ""
 web_environment:
   - DRUPAL_BASE_URL=https://lupus-decoupled.ddev.site/ce-api
+  - NUXT_HOST=0.0.0.0
+  - NUXT_PORT=3000 
 nodejs_version: "16"
 
 web_extra_daemons:
