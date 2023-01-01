@@ -29,16 +29,13 @@ web_environment:
   - NUXT_PORT=3000 
 nodejs_version: "16"
 
-web_extra_daemons:
-  - name: "nuxt"
-    # Launch the frontend, by default in dev-mode.
-    command: "npm run dev"
-    directory: /var/www/html/frontend
 hooks:
   post-start:
     - exec: |
         [[ -d frontend ]] || git clone https://github.com/drunomics/lupus-decoupled-nuxt-demo frontend
         cd frontend && npm i
+        set -x
+        pm2 start "npm run dev"
 
 # Key features of ddev's config.yaml:
 
