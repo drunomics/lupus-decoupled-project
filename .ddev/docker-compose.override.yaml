@@ -1,0 +1,5 @@
+# Make sure to publish port 3000 on the host as well, so it's available for gitpod.
+services:
+  web:
+    ports:
+      - "127.0.0.1:3000:3000"

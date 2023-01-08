@@ -13,11 +13,15 @@ additional_hostnames: ["lupus-nuxt"]
 web_extra_exposed_ports:
   - name: lupus-nuxt
     container_port: 3000
-    http_port: 3000
+    # The following ports are published via ddev-router, what is disabled on gitpod.
+    # Thus, we publish port 3000 directly via the docker-compose.overrie.yaml file.
+    http_port: 3080
     https_port: 3433
 additional_fqdns: []
 database:
   type: mariadb
+    # The following ports are published via ddev-router, what is disabled on gitpod.
+    # Thus, we publish port 3000 directly via the docker-compose.overrie.yaml file.
   version: "10.3"
 nfs_mount_enabled: false
 mutagen_enabled: false
@@ -26,7 +30,7 @@ composer_version: ""
 web_environment:
   - DRUPAL_BASE_URL=https://lupus-decoupled.ddev.site/ce-api
   - NUXT_HOST=0.0.0.0
-  - NUXT_PORT=3000 
+  - NUXT_PORT=3000
 nodejs_version: "16"
 
 hooks:
