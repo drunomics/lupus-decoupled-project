@@ -14,14 +14,14 @@ web_extra_exposed_ports:
   - name: lupus-nuxt
     container_port: 3000
     # The following ports are published via ddev-router, what is disabled on gitpod.
-    # Thus, we publish port 3000 directly via the docker-compose.overrie.yaml file.
+    # Thus, we publish port 3000 directly via the docker-compose.override.yaml file.
     http_port: 3080
     https_port: 3433
 additional_fqdns: []
 database:
   type: mariadb
     # The following ports are published via ddev-router, what is disabled on gitpod.
-    # Thus, we publish port 3000 directly via the docker-compose.overrie.yaml file.
+    # Thus, we publish port 3000 directly via the docker-compose.override.yaml file.
   version: "10.3"
 nfs_mount_enabled: false
 mutagen_enabled: false

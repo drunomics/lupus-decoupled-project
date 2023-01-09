@@ -25,6 +25,7 @@ Resources:
 
 To spin up the project locally run:
 
+      ddev start
       ddev composer install
       ddev drush si -y --account-pass=admin --site-name='lupus_decoupled' standard
       ddev drush en lupus_decoupled -y
