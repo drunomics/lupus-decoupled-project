@@ -28,7 +28,6 @@ mutagen_enabled: false
 use_dns_when_possible: true
 composer_version: ""
 web_environment:
-  - DRUPAL_BASE_URL=https://lupus-decoupled.ddev.site/ce-api
   - NUXT_HOST=0.0.0.0
   - NUXT_PORT=3000
 nodejs_version: "16"

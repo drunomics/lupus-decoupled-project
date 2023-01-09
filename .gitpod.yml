@@ -4,6 +4,7 @@ image: drupalpod/drupalpod-gitpod-base:20221021
 # when starting a workspace all docker images are ready
 tasks:
   - init: |
+      ddev config --web-environment-add="DRUPAL_BASE_URL=$(gp url 8080)"
       ddev start -y
       ddev composer install
       ddev drush si -y --account-pass=admin --site-name='ddev_gitpod' standard
