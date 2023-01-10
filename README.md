@@ -15,7 +15,7 @@ Refer to https://gitpod.io/#https://github.com/shaal/ddev-gitpod for usage docum
 
 ddev is a ridiculously simple setup for complex development environments, based upon docker compose.
 
-Requirments:
+Requirements:
 * ddev v1.21.4 or later. Please follow the [installation instructions](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/)
 
 Resources:
@@ -29,3 +29,12 @@ To spin up the project locally run:
       ddev composer install
       ddev drush si -y --account-pass=admin --site-name='lupus_decoupled' standard
       ddev drush en lupus_decoupled -y
+      # Configure lupus-decoupled frontend base URL
+      ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
+      # Login and get started adding some test-nodes
+      ddev drush user-login
+
+When using ddev locally the URLs are by default:
+
+  * Frontend: https://lupus-nuxt.ddev.site
+  * Backend: https://lupus-decoupled.ddev.site
