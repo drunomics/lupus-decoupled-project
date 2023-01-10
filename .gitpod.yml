@@ -15,8 +15,8 @@ tasks:
       ddev start -y
       gp ports await 8080 && gp preview $(ddev drush user-login)
       echo "Ready! Start testing by adding some content."
-      echo "Backend: $(gp url 3000)"
-      echo "Frontend: $(gp url 8080)"
+      echo "Backend: $(gp url 8080)"
+      echo "Frontend: $(gp url 3000)"
 
 # VScode xdebug extension
 vscode:
