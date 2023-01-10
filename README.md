@@ -27,8 +27,8 @@ To spin up the project locally run:
 
       ddev start
       ddev composer install
-      ddev drush si -y --account-pass=admin --site-name='lupus_decoupled' standard
-      ddev drush en lupus_decoupled -y
+      ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
+      ddev drush pm-enable lupus_decoupled -y
       # Configure lupus-decoupled frontend base URL
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
       # Login and get started adding some test-nodes
