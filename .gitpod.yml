@@ -4,6 +4,7 @@ image: drupalpod/drupalpod-gitpod-base:20221021
 # when starting a workspace all docker images are ready
 tasks:
   - init: |
+      ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}" 
       ddev config --web-environment-add="DRUPAL_BASE_URL=$(gp url 8080)/ce-api"
       ddev start -y
       ddev composer install
