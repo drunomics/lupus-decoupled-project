@@ -14,7 +14,7 @@ tasks:
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url $(gp url 3000) -y
     command: |
       ddev start -y
-      gp ports await 8080 && gp preview $(ddev drush user-login)
+      gp ports await 8080 && curl -sS $(gp url 8080) >/dev/null && gp preview $(ddev drush user-login)
       echo "Ready! Start testing by adding some content."
       echo "Backend: $(gp url 8080)"
       echo "Frontend: $(gp url 3000)"
