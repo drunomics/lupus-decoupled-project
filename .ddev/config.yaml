@@ -24,8 +24,9 @@ hooks:
 use_dns_when_possible: true
 composer_version: ""
 web_environment:
-- NUXT_HOST=0.0.0.0
-- NUXT_PORT=3000
+  - NUXT_HOST=0.0.0.0
+  - NUXT_PORT=3000
+  - DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site
 nodejs_version: "16"
 web_extra_exposed_ports:
 - name: lupus-nuxt
