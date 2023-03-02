@@ -20,6 +20,7 @@
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^10",
         "drupal/lupus_decoupled": "^1.0@alpha",
+        "drupal/services_env_parameter": "^1.3",
         "drush/drush": "^11"
     },
     "conflict": {
