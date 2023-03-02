@@ -11,6 +11,15 @@ Use gitpod.io to setup a full Drupal dev environment in a browser.
 This project demonstrates a complete Drupal 10 development environment, utilizing ddev and Gitpod, through your browser.
 Refer to https://gitpod.io/#https://github.com/shaal/ddev-gitpod for usage documentation.
 
+
+**!! SECURITY WARNING !!**
+
+Gitpod Drupal instances are configured to share the session cookie on the shared domain `.gitpod.io` by default. This allows all *.gitpod.io instances to read your session cookie.
+
+When using Gitpod for anything else than testing purposes, change the setting 
+`DRUPAL_SERVICE_session__storage__options___cookie_domain` in `.gitpod.yml`.
+
+
 ## Local setup with ddev
 
 ddev is a ridiculously simple setup for complex development environments, based upon docker compose.
@@ -33,7 +42,7 @@ To spin up the project locally run:
       ddev start
       ddev composer install
       ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
-      ddev drush pm-enable lupus_decoupled -y
+      ddev drush pm-enable lupus_decoupled, services_env_parameter -y
       # Configure lupus-decoupled frontend base URL
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
       # Login and get started adding some test-nodes

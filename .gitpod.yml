@@ -8,6 +8,7 @@ tasks:
       ddev config global --omit-containers dba
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}" 
       ddev config --web-environment-add="DRUPAL_BASE_URL=$(gp url 8080)/ce-api"
+      ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
       ddev start -y
       ddev composer install
       ddev drush si -y --account-pass=admin --site-name='lupus decoupled' standard
