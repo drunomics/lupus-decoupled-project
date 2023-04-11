@@ -17,7 +17,7 @@ mutagen_enabled: false
 hooks:
   post-start:
   - exec: |
-      [[ -d frontend ]] || git clone ${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo} frontend
+      [[ -d frontend ]] || git clone ${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo} frontend
       cd frontend && npm i
       set -x
       pm2 start "npm run dev"

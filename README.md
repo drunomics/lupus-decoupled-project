@@ -52,3 +52,13 @@ When using ddev locally the URLs are by default:
 
   * Frontend: https://lupus-nuxt.ddev.site
   * Backend: https://lupus-decoupled.ddev.site
+
+
+## Configuration
+
+### Change the default frontend repository
+
+For example, to chage the default from nuxt3 to nuxt2 run the following command:
+
+      ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}"
+
