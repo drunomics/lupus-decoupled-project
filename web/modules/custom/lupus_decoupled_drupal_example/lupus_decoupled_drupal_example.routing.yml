@@ -1,0 +1,8 @@
+lupus_decoupled_drupal_example.listing:
+  path: '/news'
+  defaults:
+    _title: 'News Listing'
+    _controller: '\Drupal\lupus_decoupled_drupal_example\Controller\NewsController::buildNewsListing'
+  requirements:
+    _permission: 'access content'
+
