@@ -28,7 +28,7 @@ web_environment:
   - NUXT_PORT=3000
   - PHAPP_ENV_MODE=development
   - DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site
-nodejs_version: "16"
+nodejs_version: "18"
 web_extra_exposed_ports:
 - name: lupus-nuxt
   container_port: 3000
