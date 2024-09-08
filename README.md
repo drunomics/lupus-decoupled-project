@@ -11,15 +11,6 @@ Use gitpod.io to setup a full Drupal dev environment in a browser.
 This project demonstrates a complete Drupal 10 development environment, utilizing ddev and Gitpod, through your browser.
 Refer to https://gitpod.io/#https://github.com/shaal/ddev-gitpod for usage documentation.
 
-
-**!! SECURITY WARNING !!**
-
-Gitpod Drupal instances are configured to share the session cookie on the shared domain `.gitpod.io` by default. This allows all *.gitpod.io instances to read your session cookie.
-
-When using Gitpod for anything else than testing purposes, change the setting 
-`DRUPAL_SERVICE_session__storage__options___cookie_domain` in `.gitpod.yml`.
-
-
 ## Local setup with ddev
 
 ddev is a ridiculously simple setup for complex development environments, based upon docker compose.
@@ -46,19 +37,36 @@ To spin up the project locally run:
       # Configure lupus-decoupled frontend base URL
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
       # Login and get started adding some test-nodes
-      ddev drush user-login
+      ddev drush upwd admin somepass
+      ddev launch /user/login
 
 When using ddev locally the URLs are by default:
 
   * Frontend: https://lupus-nuxt.ddev.site
   * Backend: https://lupus-decoupled.ddev.site
 
-
 ## Configuration
 
 ### Change the default frontend repository
 
-For example, to chage the default from nuxt3 to nuxt2 run the following command:
+For example, to change the repository from nuxt3 to nuxt2 run the following command:
 
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}"
 
+
+### Automatic frontend login via a shared-cookie domain
+
+In order to setup a shared cookie domain, adjust the cookie_domain option of
+Drupal via the `services.yml` configuration file, or set the option via
+an environment variable via pre-installed servies_env_parameter module. For
+that, simply set suiting values for ddev/gitpod at the locations as output
+by:
+
+     git grep -B 1 DRUPAL_SERVICE_session__storage__options___cookie_domain
+
+The commented values work by default for the Gitpod/ddev setup, but consider
+the following **SECURITY WARNING**:
+
+The values suggested are configured to share the session cookie on the shared domain `.gitpod.io` by default. This
+allows all *.gitpod.io instances to read your session cookie. When using Gitpod for anything else than testing
+purposes, use a custom parent domain.
