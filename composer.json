@@ -37,7 +37,10 @@
         "allow-plugins": {
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -88,5 +91,8 @@
                 "  * Get support: https://lupus-decoupled.org/community#chat"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/core-dev": "^10.3"
     }
 }
