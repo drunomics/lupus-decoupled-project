@@ -27,7 +27,8 @@ web_environment:
   - NUXT_HOST=0.0.0.0
   - NUXT_PORT=3000
   - PHAPP_ENV_MODE=development
-  - DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site
+  # For an automated frontend login, set a shared parent domain:
+  # - DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site
 nodejs_version: "18"
 web_extra_exposed_ports:
 - name: lupus-nuxt

@@ -209,3 +209,7 @@ circleci/database/*
 
 # Composer
 composer.lock
+
+# Lupus Decoupled Stuff
+frontend
+
