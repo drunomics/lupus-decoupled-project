@@ -11,11 +11,14 @@ tasks:
       # For an automated frontend login, set a shared parent domain:
       # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
       ddev start -y
+      [[ -z $CUSTOM_ELEMENTS_VERSION ]] || ddev composer require drupal/custom_elements:$CUSTOM_ELEMENTS_VERSION --no-update
       ddev composer install
-      ddev drush si -y --account-pass=admin --site-name='lupus decoupled' standard
+      ddev drush si -y --site-name='lupus decoupled' standard
       ddev drush en lupus_decoupled, services_env_parameter -y
       # Configure lupus-decoupled frontend base URL
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url $(gp url 3000) -y
+      echo "[NOTE] Setting default admin password for easy testing: lupus123"
+      ddev drush user:password admin lupus123
     command: |
       ddev start -y
       gp ports await 8080 && gp preview $(ddev drush user-login)
