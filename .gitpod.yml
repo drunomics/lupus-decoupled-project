@@ -1,11 +1,9 @@
-image: drupalpod/drupalpod-gitpod-base:20231222
+image: drupalpod/drupalpod-gitpod-base:20240419
 
 # ddev and composer are running as part of the prebuild
 # when starting a workspace all docker images are ready
 tasks:
   - init: |
-      # Speed-up initial run by omitting some containers not need here.
-      ddev config global --omit-containers dba
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo}"
       ddev config --web-environment-add="NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=$(gp url 8080)"
       # For an automated frontend login, set a shared parent domain:
