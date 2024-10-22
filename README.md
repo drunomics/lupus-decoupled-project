@@ -70,3 +70,13 @@ the following **SECURITY WARNING**:
 The values suggested are configured to share the session cookie on the shared domain `.gitpod.io` by default. This
 allows all *.gitpod.io instances to read your session cookie. When using Gitpod for anything else than testing
 purposes, use a custom parent domain.
+
+## Development
+
+When working on this template, things can be tested best on gitpod by modifying the launch link to test a custom branch
+of the template. Use the following link and replace `<<BRANCH>>` with the actual branch, if it contains slashes, keep
+them:
+
+```
+https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_CORE_VERSION=10.3,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt3-demo,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/<<BRANCH>>
+```
