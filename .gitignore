@@ -194,7 +194,7 @@ circleci/database/*
 /web/sites/*/settings.local.php
 /web/sites/*/settings.build.php
 /web/sites/*/services.build.yml
-
+/web/sites/*
 # Ignore artifacts
 /artifacts
 
