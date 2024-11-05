@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
@@ -38,6 +39,7 @@
         },
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "php-http/discovery": true,
@@ -50,6 +52,11 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "patches": {
+            "drupal/core": {
+                "#3485174-MR10041: Menu APIs provide invalid CSRF tokens": "https://git.drupalcode.org/project/drupal/-/snippets/221/raw/main/issue_3485174_mr_10041.patch"
             }
         },
         "installer-paths": {
@@ -85,7 +92,7 @@
             ],
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed Lupus Decoupled!     </>",
+                "<bg=blue;fg=white>  Congratulations, you've installed Lupus Decoupled!     </>",
                 "<bg=blue;fg=white>                                                         </>",
                 "",
                 "<bg=yellow;fg=black>Next steps</>:",
