@@ -33,12 +33,9 @@ To spin up the project locally run:
       ddev start
       ddev composer install
       ddev composer unpack drupal/lupus_decoupled_recipe
-      ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
+      ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' minimal
       ddev exec -d /var/www/html/web php core/scripts/drupal recipe recipes/contrib/lupus_decoupled_recipe
-      ddev drush pm-enable services_env_parameter -y
-      # Configure lupus-decoupled frontend base URL
-      ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
-      # Login and get started adding some test-nodes
+      # Login and get started
       ddev drush upwd admin somepass
       ddev launch /user/login
 
