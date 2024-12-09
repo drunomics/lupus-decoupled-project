@@ -12,20 +12,25 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://gitlab.ewdev.ca/yonas.legesse/drupal-recipe-unpack.git"
         }
     ],
     "require": {
-        "composer/installers": "^1.9",
+        "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
-        "drupal/lupus_decoupled": "1.x-dev",
-        "drupal/rest_log": "^2.3",
+        "drupal/lupus_decoupled_recipe": "1.0.x-dev",
         "drupal/responsive_preview": "^2.2",
+        "drupal/rest_log": "^2.3",
         "drupal/schema_metatag": "^3.0",
         "drupal/services_env_parameter": "^1.3",
-        "drush/drush": "^13"
+        "drush/drush": "^13",
+        "ewcomposer/unpack": "dev-master"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -40,11 +45,12 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
+            "ewcomposer/unpack": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "tbachert/spi": true
         }
     },
@@ -68,6 +74,9 @@
             ],
             "web/modules/contrib/{$name}": [
                 "type:drupal-module"
+            ],
+            "web/recipes/contrib/{$name}": [
+                "type:drupal-recipe"
             ],
             "web/profiles/contrib/{$name}": [
                 "type:drupal-profile"

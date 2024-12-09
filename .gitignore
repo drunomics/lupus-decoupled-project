@@ -9,6 +9,7 @@
 /web/core/
 /web/modules/contrib/
 /web/themes/contrib/
+/web/recipes/contrib/
 /web/profiles/contrib/
 /web/libraries/
 /web/private/scripts/quicksilver
