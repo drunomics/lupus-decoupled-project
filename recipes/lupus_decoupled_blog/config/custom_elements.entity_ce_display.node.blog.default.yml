@@ -1,0 +1,46 @@
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.blog.teaser
+    - field.field.node.blog.body
+    - field.field.node.blog.field_featured_image
+    - field.field.node.blog.field_tags
+    - node.type.blog
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+useLayoutBuilder: true
+forceAutoProcessing: false
+customElementName: node-blog
+content:
+  body:
+    formatter: auto
+    field_name: body
+    is_slot: true
+    weight: 2
+  created:
+    formatter: auto
+    field_name: created
+    is_slot: false
+    weight: 0
+  featured_image:
+    formatter: auto
+    field_name: field_featured_image
+    is_slot: false
+    weight: 0
+  tags:
+    formatter: auto
+    field_name: field_tags
+    is_slot: false
+    weight: 1
+  title:
+    formatter: auto
+    field_name: title
+    is_slot: false
+    weight: -5
+  uid:
+    formatter: auto
+    field_name: uid
+    is_slot: false
+    weight: 0
