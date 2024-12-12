@@ -22,7 +22,6 @@ hooks:
 use_dns_when_possible: true
 composer_version: ""
 web_environment:
-    - DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site
     - NUXT_HOST=0.0.0.0
     - NUXT_PORT=3000
     - PHAPP_ENV_MODE=development

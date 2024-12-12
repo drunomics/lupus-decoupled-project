@@ -30,6 +30,9 @@ Optionally, customize the project:
 
 To spin up the project locally run:
 
+      # (Optional) For an automated frontend login, set a shared parent domain:
+      ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site"
+
       ddev start
       ddev composer install
       ddev composer unpack drupal/lupus_decoupled_recipe
