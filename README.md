@@ -34,7 +34,7 @@ To spin up the project locally run:
       ddev composer install
       ddev composer unpack drupal/lupus_decoupled_recipe
       ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
-      ddev drush recipe ../recipes/lupus_decoupled_project
+      ddev drush recipe ../recipes/lupus_decoupled_recipe
       ddev drush cr
       # Login and get started
       ddev drush upwd admin somepass
