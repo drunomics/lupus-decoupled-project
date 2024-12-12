@@ -67,6 +67,9 @@
             }
         },
         "installer-paths": {
+            "recipes/lupus_decoupled_recipe_base": [
+                "drupal/lupus_decoupled_recipe"
+            ],
             "web/core": [
                 "type:drupal-core"
             ],

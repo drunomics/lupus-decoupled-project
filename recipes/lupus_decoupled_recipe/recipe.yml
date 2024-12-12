@@ -3,6 +3,6 @@ type: Lupus Decoupled Drupal
 description: A recipe to setup a Lupus Decoupled Drupal project.
 recipes:
   - drupal_cms_starter
-  - lupus_decoupled_recipe
+  - lupus_decoupled_recipe_base
 install:
   - services_env_parameter
