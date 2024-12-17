@@ -24,6 +24,7 @@
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
+        "drupal/drupal_cms_starter": "^1.0@RC",
         "drupal/lupus_decoupled_recipe": "1.0.x-dev",
         "drupal/responsive_preview": "^2.2",
         "drupal/rest_log": "^2.3",
