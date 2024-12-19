@@ -15,7 +15,7 @@ tasks:
       [[ -z $CUSTOM_ELEMENTS_VERSION ]] || ddev composer require drupal/custom_elements:$CUSTOM_ELEMENTS_VERSION --no-update
       ddev composer install
       ddev drush si -y --site-name='lupus decoupled' standard
-      ddev drush en lupus_decoupled, services_env_parameter -y
+      ddev drush recipe ../recipes/lupus_decoupled_recipe -y
       # Configure lupus-decoupled frontend base URL
       ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url $(gp url 3000) -y
       echo "[NOTE] Setting default admin password for easy testing: lupus123"
