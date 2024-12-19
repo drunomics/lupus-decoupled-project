@@ -6,3 +6,12 @@ recipes:
   - lupus_decoupled_recipe_base
 install:
   - services_env_parameter
+config:
+  # If the config we're importing already exists, we don't really care
+  # what it looks like.
+  strict: false
+  actions:
+    # We don't support antibot yet, thus we need to disable it by default.
+    antibot.settings:
+      simpleConfigUpdate:
+        form_ids: []
