@@ -56,9 +56,6 @@
             }
         },
         "patches": {
-            "drupal/core": {
-                "#3485174-MR10041: Menu APIs provide invalid CSRF tokens": "https://git.drupalcode.org/project/drupal/-/snippets/221/raw/main/issue_3485174_mr_10041.patch"
-            }
         },
         "installer-paths": {
             "web/core": [
