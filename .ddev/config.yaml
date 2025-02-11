@@ -25,6 +25,7 @@ web_environment:
   - NUXT_HOST=0.0.0.0
   - NUXT_PORT=3000
   - PHAPP_ENV_MODE=development
+  - LUPUS_DECOUPLED_AUTO_ENABLE=1
 nodejs_version: "22"
 corepack_enable: false
 web_extra_exposed_ports:
