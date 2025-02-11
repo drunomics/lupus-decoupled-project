@@ -1,5 +1,7 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/drunomics/lupus-decoupled-project)
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project)
+
 # lupus decoupled project
 
 A ddev + Gitpod enabled decoupled project template
@@ -30,13 +32,15 @@ Optionally, customize the project:
 
 To spin up the project locally run:
 
+      # (Optional) For an automated frontend login, set a shared parent domain:
+      ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site"
+
       ddev start
       ddev composer install
       ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
-      ddev drush pm-enable lupus_decoupled, services_env_parameter -y
-      # Configure lupus-decoupled frontend base URL
-      ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://lupus-nuxt.ddev.site -y
-      # Login and get started adding some test-nodes
+      ddev drush recipe ../recipes/lupus_decoupled_recipe
+      ddev drush cr
+      # Login and get started
       ddev drush upwd admin somepass
       ddev launch /user/login
 
@@ -91,5 +95,13 @@ Use the following link and replace `<<BRANCH>>` with the actual branch of the fr
 ```
 https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt3-demo,FRONTEND_BRANCH=<<BRANCH>>,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main
 ```
+
+#### Gitpod Project Types
+
+There are multiple project types controlled via the environment variable `LD_PROJECT_TYPE`:
+
+* [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-base-blue?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=base/https://github.com/drunomics/lupus-decoupled-project) Base setup using Drupal core with Lupus Decoupled Drupal and a blank frontend. Perfect to start developing 👩🏽‍💻
+* [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project): Extends the Drupal CMS Starter recipe with Lupus Decoupled Drupal and the _shadcn_ demo frontend. Perfect for testing and playing around 🎮
+* [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-blog-red?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=blog/https://github.com/drunomics/lupus-decoupled-project): Extends the Drupal CMS Blog recipe with Lupus Decoupled Drupal and the _shadcn_ demo frontend. Perfect if you want to create your own blog 📝
 
 
