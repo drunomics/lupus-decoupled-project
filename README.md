@@ -57,6 +57,10 @@ For example, to change the repository from nuxt3 to nuxt2 run the following comm
 
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}"
 
+### Auto-enable optional modules
+
+Optional modules, like responsive preview or webforms, are auto-enabled when the environment variable
+LUPUS_DECOUPLED_AUTO_ENABLE is set to 1. This is done by default and can be disabled via the ddev config.
 
 ### Automatic frontend login via a shared-cookie domain
 
