@@ -32,14 +32,11 @@ Optionally, customize the project:
 
 To spin up the project locally run:
 
-      # (Optional) For an automated frontend login, set a shared parent domain:
-      ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site"
-
       ddev start
       ddev composer install
       ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
       ddev drush recipe ../recipes/lupus_decoupled_recipe
-      ddev drush cr
+
       # Login and get started
       ddev drush upwd admin somepass
       ddev launch /user/login

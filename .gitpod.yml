@@ -4,8 +4,10 @@ image: drupalpod/drupalpod-gitpod-base:20240419
 # when starting a workspace all docker images are ready
 tasks:
   - init: |
+      # $LD_PROJECT_TYPE lets you load different presets of environment variables.
+      # For a list of supported project types, check out the README.me file.
       [[ -n $LD_PROJECT_TYPE ]] || LD_PROJECT_TYPE="base"
-      source ./env/${LD_PROJECT_TYPE}.env || echo ""
+      source ./env/${LD_PROJECT_TYPE}.env || true
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo}"
       ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}"
       # Set environment variables for both Nuxt and Next frontends.
