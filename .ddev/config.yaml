@@ -18,6 +18,7 @@ hooks:
         [[ -d frontend ]] || git clone ${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo} --branch=${FRONTEND_BRANCH:-main} frontend
         cd frontend && npm i
         set -x
+        npm run init-project-files
         pm2 start "npm run dev"
 use_dns_when_possible: true
 composer_version: ""
