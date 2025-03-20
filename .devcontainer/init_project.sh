@@ -26,12 +26,10 @@ ddev start -y
 ddev composer install
 [[ -z $ADDITIONAL_COMPOSER_PACKAGES ]] || ddev composer require $ADDITIONAL_COMPOSER_PACKAGES
 ddev drush si -y --site-name='lupus decoupled' standard
-if [[ -n $ADDITIONAL_RECIPES ]]; then
-  for recipe in $(echo "$ADDITIONAL_RECIPES" | tr ',' '\n'); do
-    ddev drush recipe $recipe
-  done
-fi
-ddev drush recipe ../recipes/lupus_decoupled_recipe -y
+RECIPES=${RECIPES:-../recipes/lupus_decoupled_recipe}
+for recipe in $(echo "$RECIPES" | tr ',' '\n'); do
+  ddev drush recipe $recipe -y
+done
 ddev drush en services_env_parameter -y
 # Configure lupus-decoupled frontend base URL
 ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://${CODESPACE_NAME}-3000.app.github.dev -y
