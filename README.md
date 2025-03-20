@@ -32,14 +32,11 @@ Optionally, customize the project:
 
 To spin up the project locally run:
 
-      # (Optional) For an automated frontend login, set a shared parent domain:
-      ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.ddev.site"
-
       ddev start
       ddev composer install
       ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' standard
       ddev drush recipe ../recipes/lupus_decoupled_recipe
-      ddev drush cr
+
       # Login and get started
       ddev drush upwd admin somepass
       ddev launch /user/login
@@ -57,6 +54,10 @@ For example, to change the repository from nuxt3 to nuxt2 run the following comm
 
       ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}"
 
+### Auto-enable optional modules
+
+Optional modules, like responsive preview or webforms, are auto-enabled when the environment variable
+LUPUS_DECOUPLED_AUTO_ENABLE is set to 1. This is done by default and can be disabled via the ddev config.
 
 ### Automatic frontend login via a shared-cookie domain
 

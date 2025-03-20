@@ -20,10 +20,11 @@
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "^11.1",
-        "drupal/lupus_decoupled_recipe": "1.0.x-dev",
+        "drupal/lupus_decoupled_recipe": "^1.0.0",
         "drupal/responsive_preview": "^2.2",
         "drupal/rest_log": "^2.3",
         "drupal/schema_metatag": "^3.0",
+        "drupal/webform": "6.*",
         "drupal/services_env_parameter": "^1.3",
         "drush/drush": "^13"
     },
@@ -55,9 +56,6 @@
             }
         },
         "patches": {
-            "drupal/core": {
-                "#3485174-MR10041: Menu APIs provide invalid CSRF tokens": "https://git.drupalcode.org/project/drupal/-/snippets/221/raw/main/issue_3485174_mr_10041.patch"
-            }
         },
         "installer-paths": {
             "web/core": [
