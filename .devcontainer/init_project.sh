@@ -17,7 +17,7 @@ source ./env/${LD_PROJECT_TYPE}.env || echo ""
 ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo}"
 ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}"
 # Set environment variables for both Nuxt and Next frontends.
-ddev config --web-environment-add="NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-8080.app.github.dev"
+ddev config --web-environment-add="NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-3000.app.github.dev"
 ddev config --web-environment-add="NEXT_PUBLIC_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-8080.app.github.dev"
 # For an automated frontend login, set a shared parent domain:
 # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
@@ -32,6 +32,6 @@ for recipe in $(echo "$RECIPES" | tr ',' '\n'); do
 done
 ddev drush en services_env_parameter -y
 # Configure lupus-decoupled frontend base URL
-ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://${CODESPACE_NAME}-8080.app.github.dev -y
+ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://${CODESPACE_NAME}-3000.app.github.dev -y
 echo "[NOTE] Setting default admin password for easy testing: lupus123"
 ddev drush user:password admin lupus123
