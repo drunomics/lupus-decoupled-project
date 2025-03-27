@@ -13,7 +13,9 @@ wait_for_docker() {
 wait_for_docker
 
 # Expose port 80 as public so the frontend can access the backend
-gh codespace ports visibility 80:public
+gh api --method PATCH -H "Accept: application/vnd.github+json" \
+  "/user/codespaces/${CODESPACE_NAME}/ports/80" \
+  -f visibility="public"
 
 [[ -n $LD_PROJECT_TYPE ]] || LD_PROJECT_TYPE="base"
 source ./env/${LD_PROJECT_TYPE}.env || echo ""
