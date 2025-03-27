@@ -12,9 +12,6 @@ wait_for_docker() {
 
 wait_for_docker
 
-# Expose port 80 as public so the frontend can access the backend
-gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
-
 [[ -n $LD_PROJECT_TYPE ]] || LD_PROJECT_TYPE="base"
 source ./env/${LD_PROJECT_TYPE}.env || echo ""
 ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo}"
