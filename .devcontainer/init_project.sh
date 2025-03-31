@@ -37,4 +37,4 @@ ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://
 echo "[NOTE] Setting default admin password for easy testing: lupus123"
 ddev drush user:password admin lupus123
 # Expose port 80 as public so the frontend can access the backend
- gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
+gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
