@@ -19,6 +19,7 @@ ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}"
 # Set environment variables for both Nuxt and Next frontends.
 ddev config --web-environment-add="NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-80.app.github.dev"
 ddev config --web-environment-add="NEXT_PUBLIC_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-80.app.github.dev"
+ddev config --web-environment-add="DRUPAL_BASE_URL=https://${CODESPACE_NAME}-80.app.github.dev"
 # For an automated frontend login, set a shared parent domain:
 # ddev config --web-environment-add="DRUPAL_SERVICE_session__storage__options___cookie_domain=.gitpod.io"
 ddev start -y
