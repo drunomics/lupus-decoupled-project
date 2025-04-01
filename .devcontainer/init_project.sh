@@ -36,5 +36,6 @@ ddev drush en services_env_parameter -y
 ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://${CODESPACE_NAME}-3000.app.github.dev -y
 echo "[NOTE] Setting default admin password for easy testing: lupus123"
 ddev drush user:password admin lupus123
-# Expose port 80 as public so the frontend can access the backend
+# Expose ports as public.
 gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
+gh codespace ports visibility 3000:public --codespace "${CODESPACE_NAME}"
