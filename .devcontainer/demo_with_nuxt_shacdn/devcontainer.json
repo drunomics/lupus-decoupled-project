@@ -1,0 +1,42 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/ddev/ddev/install-ddev:latest": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "felixfbecker.php-debug",
+        "wongjn.php-sniffer",
+        "neilbrayfield.php-docblocker",
+        "bmewburn.vscode-intelephense-client",
+        "andrewdavidblum.drupal-smart-snippets",
+        "mblode.twig-language-2",
+        "timonwong.shellcheck",
+        "rogalmic.bash-debug"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "8080": {
+      "label": "Backend",
+      "onAutoForward": "openPreview"
+    },
+    "3000": {
+      "label": "Frontend"
+    },
+    "3306": {
+      "label": "Database"
+    },
+    "8027": {
+      "label": "Mailhog"
+    },
+    "8036": {
+      "label": "phpMyAdmin"
+    },
+    "9003": {
+      "label": "Xdebug"
+    }
+  },
+  "postStartCommand": "LD_PROJECT_TYPE=demo FRONTEND_REPOSITORY=https://github.com/drunomics/lupus-decoupled-nuxt3-demo-shadcn .devcontainer/init_project.sh"
+}
