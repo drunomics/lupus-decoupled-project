@@ -6,12 +6,12 @@
 
 A ddev + Gitpod enabled decoupled project template
 
-## Set up on Gitpod.
+## Set up on Github Codespaces.
 
-Use gitpod.io to setup a full Drupal dev environment in a browser.
+Use github codespaces to setup a full Drupal dev environment in a browser.
 
-This project demonstrates a complete Drupal 10 development environment, utilizing ddev and Gitpod, through your browser.
-Refer to https://gitpod.io/#https://github.com/shaal/ddev-gitpod for usage documentation.
+This project demonstrates a complete Drupal 10 development environment, utilizing ddev and codespaces, through your browser.
+Refer to https://docs.github.com/en/codespaces for usage documentation.
 
 ## Local setup with ddev
 
