@@ -5,7 +5,7 @@ php_version: "8.3"
 webserver_type: nginx-fpm
 router_http_port: "80"
 router_https_port: "443"
-xdebug_enabled: false
+xdebug_enabled: true
 additional_hostnames:
   - lupus-nuxt
 additional_fqdns: []

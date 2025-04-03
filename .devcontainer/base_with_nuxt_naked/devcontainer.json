@@ -3,6 +3,20 @@
   "features": {
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
+  "secrets": {
+    "FRONTEND_REPOSITORY": {
+      "description": "Git repository of the front-end to use."
+    },
+    "FRONTEND_BRANCH": {
+      "descripton": "The branch of the front-end repository to use."
+    },
+    "ADDITIONAL_COMPOSER_PACKAGES": {
+      "description": "Coma seperated list of the Drupal or PHP packages to require with composer."
+    },
+    "RECIPES": {
+      "description": "Drupal recipes to apply."
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -27,9 +41,6 @@
     },
     "3306": {
       "label": "Database"
-    },
-    "8027": {
-      "label": "Mailhog"
     },
     "9003": {
       "label": "Xdebug"
