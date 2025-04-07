@@ -3,6 +3,20 @@
   "features": {
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
+  "secrets": {
+    "FRONTEND_REPOSITORY": {
+      "description": "Git repository of the front-end to use. (Default: https://github.com/drunomics/lupus-decoupled-nuxt3-demo-shadcn)"
+    },
+    "FRONTEND_BRANCH": {
+      "descripton": "The branch of the front-end repository to use. (Default: main)"
+    },
+    "ADDITIONAL_COMPOSER_PACKAGES": {
+      "description": "Coma seperated list of the Drupal or PHP packages to require with composer. (Default: drupal/drupal_cms_starter)"
+    },
+    "RECIPES": {
+      "description": "Drupal recipes to apply. (Default: ../recipes/drupal_cms_starter,../recipes/lupus_decoupled_recipe)"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -31,12 +45,9 @@
     "8027": {
       "label": "Mailhog"
     },
-    "8036": {
-      "label": "phpMyAdmin"
-    },
     "9003": {
       "label": "Xdebug"
     }
   },
-  "postStartCommand": "LD_PROJECT_TYPE=base .devcontainer/init_project.sh"
+  "postStartCommand": "LD_PROJECT_TYPE=demo .devcontainer/init_project.sh"
 }
