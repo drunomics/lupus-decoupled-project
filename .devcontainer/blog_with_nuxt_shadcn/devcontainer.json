@@ -3,20 +3,6 @@
   "features": {
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
-  "secrets": {
-    "FRONTEND_REPOSITORY": {
-      "description": "Git repository of the front-end to use. (Default: https://github.com/drunomics/lupus-decoupled-nuxt3-demo-shadcn)"
-    },
-    "FRONTEND_BRANCH": {
-      "descripton": "The branch of the front-end repository to use. (Default: main)"
-    },
-    "ADDITIONAL_COMPOSER_PACKAGES": {
-      "description": "Coma seperated list of the Drupal or PHP packages to require with composer. (Default: drupal/lupus_decoupled_blog)"
-    },
-    "RECIPES": {
-      "description": "Drupal recipes to apply. (Default: ../recipes/drupal/lupus_decoupled_blog)"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
