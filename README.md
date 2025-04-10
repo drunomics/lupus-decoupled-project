@@ -1,21 +1,22 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/drunomics/lupus-decoupled-project)
+[![Codespaces ready-to-code](https://img.shields.io/badge/Codespaces-ready--to--code-blue?logo=github)](https://github.com/codespaces/new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_nuxt_naked%2Fdevcontainer.json)
 
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project)
+[![Codespaces ready-to-code](https://img.shields.io/badge/Codespaces-demo-098383?logo=github)](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fdemo_with_nuxt_shadcn%2Fdevcontainer.json)
+
 
 # lupus decoupled project
 
-A ddev + Gitpod enabled decoupled project template
+A [ddev](https://ddev.com/) + [devcontainers](https://containers.dev/) enabled decoupled project template
 
-## Set up on Github Codespaces.
+## Set up on GitHub Codespaces
 
-Use github codespaces to setup a full Drupal dev environment in a browser.
+Use [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) to setup a full Drupal dev environment in a browser.
 
 This project demonstrates a complete Drupal 10 development environment, utilizing ddev and codespaces, through your browser.
 Refer to https://docs.github.com/en/codespaces for usage documentation.
 
 ## Local setup with ddev
 
-ddev is a ridiculously simple setup for complex development environments, based upon docker compose.
+[ddev](https://ddev.com/) is a ridiculously simple setup for complex development environments, based upon docker compose.
 
 Requirements:
 * ddev v1.23 or later. Please follow the [installation instructions](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/)
@@ -63,7 +64,7 @@ LUPUS_DECOUPLED_AUTO_ENABLE is set to 1. This is done by default and can be disa
 
 In order to setup a shared cookie domain, adjust the cookie_domain option of
 Drupal via the `services.yml` configuration file, or set the option via
-an environment variable via pre-installed servies_env_parameter module. For
+an environment variable via pre-installed services_env_parameter module. For
 that, simply set suiting values for ddev/gitpod at the locations as output
 by:
 
@@ -72,13 +73,22 @@ by:
 The commented values work by default for the Gitpod/ddev setup, but consider
 the following **SECURITY WARNING**:
 
-The values suggested are configured to share the session cookie on the shared domain `.gitpod.io` by default. This
+The values suggested are configured to share the session cookie on the shared domain `.gitpod.io** by default. This
 allows all *.gitpod.io instances to read your session cookie. When using Gitpod for anything else than testing
 purposes, use a custom parent domain.
 
-## Development
+## Development in Cloud
+
+### GitHub Codespaces
 
 ### Gitpod testing options
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/drunomics/lupus-decoupled-project)
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project)
+
+
+**NOTE:** *Gitpod setup is deprecated.*
 
 When working on this template, things can be tested best on gitpod by modifying the launch link.
 
@@ -104,5 +114,3 @@ There are multiple project types controlled via the environment variable `LD_PRO
 * [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-base-blue?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=base/https://github.com/drunomics/lupus-decoupled-project) Base setup using Drupal core with Lupus Decoupled Drupal and a blank frontend. Perfect to start developing 👩🏽‍💻
 * [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project): Extends the Drupal CMS Starter recipe with Lupus Decoupled Drupal and the _shadcn_ demo frontend. Perfect for testing and playing around 🎮
 * [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-blog-red?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=blog/https://github.com/drunomics/lupus-decoupled-project): Extends the Drupal CMS Blog recipe with Lupus Decoupled Drupal and the _shadcn_ demo frontend. Perfect if you want to create your own blog 📝
-
-
