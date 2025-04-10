@@ -7,13 +7,6 @@
 
 A [ddev](https://ddev.com/) + [devcontainers](https://containers.dev/) enabled decoupled project template
 
-## Set up on GitHub Codespaces
-
-Use [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) to setup a full Drupal dev environment in a browser.
-
-This project demonstrates a complete Drupal 10 development environment, utilizing ddev and codespaces, through your browser.
-Refer to https://docs.github.com/en/codespaces for usage documentation.
-
 ## Local setup with ddev
 
 [ddev](https://ddev.com/) is a ridiculously simple setup for complex development environments, based upon docker compose.
@@ -80,6 +73,20 @@ purposes, use a custom parent domain.
 ## Development in Cloud
 
 ### GitHub Codespaces
+
+Use [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) to setup a full Drupal dev environment in a browser.
+
+This project demonstrates a complete Drupal 10 development environment,
+utilizing ddev and Codespaces, through your browser. Refer to
+https://docs.github.com/en/codespaces for usage documentation.
+
+Choose one of the following preconfigured development environments based on
+your needs (clicking on a link launches that Codespace):
+- [Standard Environment (Drupal 11 + Nuxt3 Naked)](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_nuxt_naked%2Fdevcontainer.json)
+- [Drupal 11 + Nuxt3 Shadcn Demo](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_nuxt_shadcn%2Fdevcontainer.json)
+- [Drupal 11 + Next.js Demo](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_next%2Fdevcontainer.json)
+
+Additional documentation is found in the [Play online](https://lupus-decoupled.org/get-started/play-online) section of the Lupus Decoupled Drupal documentation.
 
 ### Gitpod testing options
 
