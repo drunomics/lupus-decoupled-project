@@ -80,13 +80,7 @@ This project demonstrates a complete Drupal 10 development environment,
 utilizing ddev and Codespaces, through your browser. Refer to
 https://docs.github.com/en/codespaces for usage documentation.
 
-Choose one of the following preconfigured development environments based on
-your needs (clicking on a link launches that Codespace):
-- [Standard Environment (Drupal 11 + Nuxt3 Naked)](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_nuxt_naked%2Fdevcontainer.json)
-- [Drupal 11 + Nuxt3 Shadcn Demo](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_nuxt_shadcn%2Fdevcontainer.json)
-- [Drupal 11 + Next.js Demo](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1&devcontainer_path=.devcontainer%2Fbase_with_next%2Fdevcontainer.json)
-
-Additional documentation is found in the [Play online](https://lupus-decoupled.org/get-started/play-online) section of the Lupus Decoupled Drupal documentation.
+Documentation is found in the [Play online](https://lupus-decoupled.org/get-started/play-online) section of the Lupus Decoupled Drupal documentation.
 
 ### Gitpod testing options
 
@@ -95,7 +89,7 @@ Additional documentation is found in the [Play online](https://lupus-decoupled.o
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project)
 
 
-**NOTE:** *Gitpod setup is deprecated.*
+**NOTE:** *Gitpod setup is deprecated. Only 50 development hours are provided in the free tier of Gitpod Flex package. Above that a [paid subscription](https://www.gitpod.io/pricing) is needed.*
 
 When working on this template, things can be tested best on gitpod by modifying the launch link.
 
