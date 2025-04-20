@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset name="lupus_decoupled">
+  <file>./web/modules/contrib/lupus_decoupled</file>
+  <file>./web/modules/custom</file>
+
+  <!-- Exclude -->
+  <exclude-pattern>*md</exclude-pattern>
+
+  <arg name="extensions" value="inc,install,module,php,profile,test,theme"/>
+  <arg value="s"/>
+
+  <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal">
+    <!--Blacklist of coding standard rules we don't care about. -->
+
+  </rule>
+
+</ruleset>
