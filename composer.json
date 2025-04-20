@@ -17,9 +17,9 @@
     "require": {
         "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^11.1",
-        "drupal/core-project-message": "^11.1",
-        "drupal/core-recommended": "^11.1",
+        "drupal/core-composer-scaffold": "^11.1 || ^10.4",
+        "drupal/core-project-message": "^11.1 || ^10.4",
+        "drupal/core-recommended": "^11.1 || ^10.4",
         "drupal/devel": "^5.3",
         "drupal/lupus_decoupled_recipe": "^1.0.0",
         "drupal/responsive_preview": "^2.2",
@@ -105,6 +105,6 @@
         }
     },
     "require-dev": {
-        "drupal/core-dev": "^11"
+        "drupal/core-dev": "^11 || ^10.4"
     }
 }
