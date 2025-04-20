@@ -213,3 +213,7 @@ composer.lock
 # Lupus Decoupled Stuff
 frontend
 
+# Allow using local config, version dist file.
+phpcs.xml
+phpunit.xml
+.phpunit.result.cache
