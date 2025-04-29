@@ -7,13 +7,6 @@
 
 A [ddev](https://ddev.com/) + [devcontainers](https://containers.dev/) enabled decoupled project template
 
-## Set up on GitHub Codespaces
-
-Use [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) to setup a full Drupal dev environment in a browser.
-
-This project demonstrates a complete Drupal 10 development environment, utilizing ddev and codespaces, through your browser.
-Refer to https://docs.github.com/en/codespaces for usage documentation.
-
 ## Local setup with ddev
 
 [ddev](https://ddev.com/) is a ridiculously simple setup for complex development environments, based upon docker compose.
@@ -81,6 +74,14 @@ purposes, use a custom parent domain.
 
 ### GitHub Codespaces
 
+Use [GitHub Codespaces](https://docs.github.com/en/codespaces/about-codespaces/what-are-codespaces) to setup a full Drupal dev environment in a browser.
+
+This project demonstrates a complete Drupal 10 development environment,
+utilizing ddev and Codespaces, through your browser. Refer to
+https://docs.github.com/en/codespaces for usage documentation.
+
+Documentation is found in the [Play online](https://lupus-decoupled.org/get-started/play-online) section of the Lupus Decoupled Drupal documentation.
+
 ### Gitpod testing options
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/drunomics/lupus-decoupled-project)
@@ -88,7 +89,7 @@ purposes, use a custom parent domain.
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-demo-098383?logo=gitpod)](https://gitpod.io/new/#LD_PROJECT_TYPE=demo/https://github.com/drunomics/lupus-decoupled-project)
 
 
-**NOTE:** *Gitpod setup is deprecated.*
+**NOTE:** *Gitpod setup is deprecated. Only 50 development hours are provided in the free tier of Gitpod Flex package. Above that a [paid subscription](https://www.gitpod.io/pricing) is needed.*
 
 When working on this template, things can be tested best on gitpod by modifying the launch link.
 
