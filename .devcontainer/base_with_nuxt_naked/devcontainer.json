@@ -14,7 +14,12 @@
         "mblode.twig-language-2",
         "timonwong.shellcheck",
         "rogalmic.bash-debug"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+  }
+}
     }
   },
   "portsAttributes": {
