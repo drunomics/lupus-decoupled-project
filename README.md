@@ -40,6 +40,28 @@ When using ddev locally the URLs are by default:
   * Frontend: https://lupus-nuxt.ddev.site
   * Backend: https://lupus-decoupled.ddev.site
 
+## Using Lupus Decoupled Drupal CMS Recipes
+
+Optionally, use our shadcn demo frontend repository:
+
+      ddev config --web-environment-add="FRONTEND_REPOSITORY=https://github.com/drunomics/lupus-decoupled-nuxt3-demo-shadcn"
+
+To spin up the project locally with run:
+
+      ddev start
+      ddev composer install
+      ddev drush site-install -y --account-pass=admin --site-name='lupus_decoupled' minimal
+      ddev composer require drupal/lupus_decoupled_starter
+      ddev drush recipe ../recipes/lupus_decoupled_starter
+
+      # Optional: Add the drupal cms nuxt layer.
+      ddev exec node frontend/scripts/add-drupal-cms-layer-extension.js
+      ddev exec pm2 restart 0
+
+      # Login and get started
+      ddev drush upwd admin somepass
+      ddev launch /user/login
+
 ## Configuration
 
 ### Change the default frontend repository
