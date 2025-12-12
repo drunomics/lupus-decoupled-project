@@ -21,7 +21,7 @@ Resources:
 Optionally, customize the project:
 
       # Configure a different frontend repository.
-      ddev config --web-environment-add="FRONTEND_REPOSITORY=https://github.com/drunomics/lupus-decoupled-nuxt3-demo"
+      ddev config --web-environment-add="FRONTEND_REPOSITORY=https://github.com/drunomics/lupus-decoupled-nuxt-starter"
 
 
 To spin up the project locally run:
@@ -46,7 +46,7 @@ When using ddev locally the URLs are by default:
 
 For example, to change the repository from nuxt3 to nuxt2 run the following command:
 
-      ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-demo}"
+      ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt2-demo}"
 
 ### Auto-enable optional modules
 
@@ -98,14 +98,14 @@ Use the following link and replace `<<BRANCH>>` with the actual branch, if it co
 them:
 
 ```
-https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt3-demo,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/<<BRANCH>>
+https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt-starter,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/<<BRANCH>>
 ```
 
 **Testing frontend repository branches**
 Use the following link and replace `<<BRANCH>>` with the actual branch of the frontend repository that should be used. If it contains slashes, url-encode them by replacing them with `%2F`:
 
 ```
-https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt3-demo,FRONTEND_BRANCH=<<BRANCH>>,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main
+https://gitpod.io/new/#DP_PROJECT_NAME=lupus_decoupled,DP_ISSUE_BRANCH=1.x,DP_PROJECT_TYPE=project_module,DP_MODULE_VERSION=1.x,DP_PATCH_FILE=,FRONTEND_REPOSITORY=https%3A%2F%2Fgithub.com%2Fdrunomics%2Flupus-decoupled-nuxt-starter,FRONTEND_BRANCH=<<BRANCH>>,CUSTOM_ELEMENTS_VERSION=3.*,DP_INSTALL_PROFILE=standard/https://github.com/drunomics/lupus-decoupled-project/tree/main
 ```
 
 #### Gitpod Project Types

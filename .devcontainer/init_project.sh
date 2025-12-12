@@ -14,7 +14,7 @@ wait_for_docker
 
 [[ -n $LD_PROJECT_TYPE ]] || LD_PROJECT_TYPE="base"
 source ./env/${LD_PROJECT_TYPE}.env || echo ""
-ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt3-demo}"
+ddev config --web-environment-add="FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-starter}"
 ddev config --web-environment-add="FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}"
 # Set environment variables for both Nuxt and Next frontends.
 ddev config --web-environment-add="NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=https://${CODESPACE_NAME}-80.app.github.dev"
