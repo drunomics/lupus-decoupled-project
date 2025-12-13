@@ -13,7 +13,11 @@
         "andrewdavidblum.drupal-smart-snippets",
         "mblode.twig-language-2",
         "timonwong.shellcheck",
-        "rogalmic.bash-debug"
+        "rogalmic.bash-debug",
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
       ]
     }
   },
@@ -32,5 +36,10 @@
       "label": "Xdebug"
     }
   },
-  "postStartCommand": "LD_PROJECT_TYPE=blog .devcontainer/init_project.sh"
+  "waitFor": "postCreateCommand",
+  "postCreateCommand": "LD_PROJECT_TYPE=blog .devcontainer/init_project.sh",
+  "postAttachCommand": {
+    "ddev": ".devcontainer/start_project.sh",
+    "logs": "ddev exec pm2 logs"
+  }
 }
