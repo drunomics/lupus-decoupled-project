@@ -207,6 +207,9 @@ circleci/database/*
 .ddev/config.fqdns.yaml
 .ddev/config.gitpod-overrides.yaml
 
+# Devcontainer (generated from template)
+.ddev/config.devcontainer.yaml
+
 # Composer
 composer.lock
 

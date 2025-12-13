@@ -10,7 +10,7 @@ if [[ -z "$CODESPACE_NAME" ]]; then
 fi
 
 echo "Exposing ports as public..."
-gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
+gh codespace ports visibility 8080:public --codespace "${CODESPACE_NAME}"
 gh codespace ports visibility 3000:public --codespace "${CODESPACE_NAME}"
 
 echo "Codespace setup complete!"

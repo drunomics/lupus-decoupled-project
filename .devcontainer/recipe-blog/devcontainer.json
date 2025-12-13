@@ -40,18 +40,14 @@
       }
     }
   },
-  "forwardPorts": [80, 443, 3000],
+  "forwardPorts": [3000, 8080],
   "portsAttributes": {
-    "80": {
-      "label": "Backend (HTTP)",
-      "protocol": "http"
-    },
-    "443": {
-      "label": "Backend (HTTPS)",
-      "protocol": "https"
-    },
     "3000": {
       "label": "Frontend"
+    },
+    "8080": {
+      "label": "Backend",
+      "protocol": "http"
     },
     "3306": {
       "label": "Database"
