@@ -37,10 +37,15 @@
       }
     }
   },
+  "forwardPorts": [80, 443, 3000],
   "portsAttributes": {
-    "8080": {
-      "label": "Backend",
-      "onAutoForward": "openPreview"
+    "80": {
+      "label": "Backend (HTTP)",
+      "protocol": "http"
+    },
+    "443": {
+      "label": "Backend (HTTPS)",
+      "protocol": "https"
     },
     "3000": {
       "label": "Frontend"
@@ -51,6 +56,9 @@
     "9003": {
       "label": "Xdebug"
     }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
   },
   "waitFor": "postCreateCommand",
   "onCreateCommand": ".devcontainer/prebuild.sh",
