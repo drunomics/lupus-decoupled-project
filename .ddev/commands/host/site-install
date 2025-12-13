@@ -1,0 +1,35 @@
+#!/bin/bash
+
+## Description: Install Drupal site with lupus decoupled recipe
+## Usage: site-install
+## Aliases: si
+
+set -e
+
+echo "Installing PHP dependencies..."
+ddev composer install
+
+# Install additional composer packages if specified
+if [[ -n "$ADDITIONAL_COMPOSER_PACKAGES" ]]; then
+  echo "Installing additional packages: $ADDITIONAL_COMPOSER_PACKAGES"
+  ddev composer require $ADDITIONAL_COMPOSER_PACKAGES
+fi
+
+echo "Installing Drupal..."
+ddev drush si -y --site-name='lupus decoupled' standard
+
+echo "Applying Drupal recipes..."
+RECIPES=${RECIPES:-../recipes/lupus_decoupled_recipe}
+for recipe in $(echo "$RECIPES" | tr ',' '\n'); do
+  echo "  Applying recipe: $recipe"
+  ddev drush recipe $recipe -y
+done
+
+echo "Enabling services_env_parameter..."
+ddev drush en services_env_parameter -y
+
+echo "Setting admin password to: lupus123"
+ddev drush user:password admin lupus123
+
+echo ""
+echo "Site installation complete!"

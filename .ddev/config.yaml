@@ -26,6 +26,12 @@ web_environment:
   - NUXT_PORT=3000
   - PHAPP_ENV_MODE=development
   - LUPUS_DECOUPLED_AUTO_ENABLE=1
+  - FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-starter}
+  - FRONTEND_BRANCH=${FRONTEND_BRANCH:-main}
+  # Codespaces URL vars - passed through if set, empty otherwise (frontend uses defaults)
+  - NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=${NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL-}
+  - NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL=${NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL-}
+  - NEXT_PUBLIC_DRUPAL_BASE_URL=${NEXT_PUBLIC_DRUPAL_BASE_URL-}
 nodejs_version: "22"
 corepack_enable: false
 web_extra_exposed_ports:

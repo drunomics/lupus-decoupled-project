@@ -1,0 +1,6 @@
+#!/bin/bash
+
+## Description: Open Drupal one-time login URL in browser
+## Usage: uli
+
+xdg-open "$(ddev drush uli --no-browser)"

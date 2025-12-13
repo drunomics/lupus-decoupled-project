@@ -1,7 +1,17 @@
 {
+  "name": "Next.js",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
+  },
+  "containerEnv": {
+    "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nextjs-example",
+    "FRONTEND_BRANCH": "main"
+  },
+  "remoteEnv": {
+    "NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
+    "NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
+    "NEXT_PUBLIC_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev"
   },
   "customizations": {
     "vscode": {
@@ -14,7 +24,6 @@
         "mblode.twig-language-2",
         "timonwong.shellcheck",
         "rogalmic.bash-debug",
-        "Vue.volar",
         "dbaeumer.vscode-eslint",
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode"
@@ -32,17 +41,15 @@
     "3306": {
       "label": "Database"
     },
-    "8027": {
-      "label": "Mailhog"
-    },
     "9003": {
       "label": "Xdebug"
     }
   },
   "waitFor": "postCreateCommand",
-  "postCreateCommand": "LD_PROJECT_TYPE=demo .devcontainer/init_project.sh",
+  "onCreateCommand": ".devcontainer/prebuild.sh",
+  "postCreateCommand": ".devcontainer/init-project.sh",
   "postAttachCommand": {
-    "ddev": ".devcontainer/start_project.sh",
+    "ddev": ".devcontainer/start-project.sh",
     "logs": "ddev exec pm2 logs"
   }
 }

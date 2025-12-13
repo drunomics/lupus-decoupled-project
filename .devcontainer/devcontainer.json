@@ -1,7 +1,22 @@
 {
+  "name": "Nuxt Naked (Default)",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
+  },
+  "containerEnv": {
+    "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nuxt-starter",
+    "FRONTEND_BRANCH": "main"
+  },
+  "remoteEnv": {
+    "NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
+    "NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
+    "NEXT_PUBLIC_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev"
+  },
+  "secrets": {
+    "FRONTEND_REPOSITORY": {
+      "description": "Optional: Override the default frontend repository URL"
+    }
   },
   "customizations": {
     "vscode": {
@@ -14,10 +29,14 @@
         "mblode.twig-language-2",
         "timonwong.shellcheck",
         "rogalmic.bash-debug",
+        "Vue.volar",
         "dbaeumer.vscode-eslint",
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
   },
   "portsAttributes": {
@@ -36,9 +55,10 @@
     }
   },
   "waitFor": "postCreateCommand",
-  "postCreateCommand": "LD_PROJECT_TYPE=base FRONTEND_REPOSITORY=https://github.com/drunomics/lupus-decoupled-nextjs-example .devcontainer/init_project.sh",
+  "onCreateCommand": ".devcontainer/prebuild.sh",
+  "postCreateCommand": ".devcontainer/init-project.sh",
   "postAttachCommand": {
-    "ddev": ".devcontainer/start_project.sh",
+    "ddev": ".devcontainer/start-project.sh",
     "logs": "ddev exec pm2 logs"
   }
 }
