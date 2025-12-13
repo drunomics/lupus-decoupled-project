@@ -6,9 +6,13 @@
   },
   "containerEnv": {
     "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nuxt-shadcn",
-    "FRONTEND_BRANCH": "main",
     "ADDITIONAL_COMPOSER_PACKAGES": "drupal/lupus_decoupled_blog",
     "RECIPES": "../recipes/lupus_decoupled_blog"
+  },
+  "secrets": {
+    "FRONTEND_BRANCH": {
+      "description": "Optional: Override the default frontend branch"
+    }
   },
   "remoteEnv": {
     "NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
