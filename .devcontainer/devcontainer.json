@@ -1,16 +1,16 @@
 {
   "name": "Nuxt Naked (Default)",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/base:debian-12",
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
   "containerEnv": {
-    "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nuxt-starter"
+    "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nuxt-starter",
+    "DDEV_NO_INSTRUMENTATION": "true"
   },
   "remoteEnv": {
-    "NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
-    "NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev",
-    "NEXT_PUBLIC_DRUPAL_BASE_URL": "https://${localEnv:CODESPACE_NAME}-80.app.github.dev"
+    "CODESPACE_NAME": "${localEnv:CODESPACE_NAME}"
   },
   "secrets": {
     "FRONTEND_BRANCH": {
@@ -56,8 +56,5 @@
   "waitFor": "postCreateCommand",
   "onCreateCommand": ".devcontainer/prebuild.sh",
   "postCreateCommand": ".devcontainer/init-project.sh",
-  "postAttachCommand": {
-    "ddev": ".devcontainer/start-project.sh",
-    "logs": "ddev exec pm2 logs"
-  }
+  "postStartCommand": "ddev start"
 }

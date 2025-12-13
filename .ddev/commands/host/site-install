@@ -31,5 +31,8 @@ ddev drush en services_env_parameter -y
 echo "Setting admin password to: lupus123"
 ddev drush user:password admin lupus123
 
+echo "Configuring frontend URL..."
+ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url "${FRONTEND_URL:-https://lupus-nuxt.ddev.site}" -y
+
 echo ""
 echo "Site installation complete!"

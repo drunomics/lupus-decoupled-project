@@ -1,27 +1,25 @@
 #!/bin/bash
-set -ex
+set -e
+
+# Source environment (BACKEND_URL, FRONTEND_URL)
+source .devcontainer/env.sh
 
 echo "=============================================="
 echo "  Lupus Decoupled - User Setup"
 echo "=============================================="
 
-echo "[1/3] Configuring Codespace URLs..."
+echo "[1/2] Configuring Codespaces (if applicable)..."
 .devcontainer/setup-codespaces.sh
 
-echo "[2/3] Starting DDEV to apply config..."
-ddev start
-
-echo "[3/3] Opening Drupal login..."
-# Get one-time login URL and transform to Codespace URL
-LOGIN_PATH=$(ddev drush uli --no-browser | sed 's|^.*/user/reset|/user/reset|')
-LOGIN_URL="https://${CODESPACE_NAME}-80.app.github.dev${LOGIN_PATH}"
+echo "[2/2] Opening Drupal login..."
+LOGIN_URL=$(ddev drush uli --no-browser)
 
 echo ""
 echo "=============================================="
 echo "  Setup Complete!"
 echo "=============================================="
-echo "  Backend:  https://${CODESPACE_NAME}-80.app.github.dev"
-echo "  Frontend: https://${CODESPACE_NAME}-3000.app.github.dev"
+echo "  Backend:  ${BACKEND_URL}/user/login"
+echo "  Frontend: ${FRONTEND_URL}"
 echo "  Login:    admin / lupus123"
 echo "=============================================="
 
@@ -29,5 +27,4 @@ echo "=============================================="
 echo ""
 echo "Opening login URL in browser..."
 echo "$LOGIN_URL"
-# Use VS Code's URL opener in Codespaces
 code --open-url "$LOGIN_URL" 2>/dev/null || true

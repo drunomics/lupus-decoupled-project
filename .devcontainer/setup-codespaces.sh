@@ -1,12 +1,13 @@
 #!/bin/bash
-
-## Codespaces-specific configuration
-## URL environment variables are handled by .ddev/config.codespaces.yaml
+## Github Codespaces-specific configuration
+## Skipped when running locally (no CODESPACE_NAME)
 
 set -e
 
-echo "Configuring Drupal frontend base URL..."
-ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url https://${CODESPACE_NAME}-3000.app.github.dev -y
+if [[ -z "$CODESPACE_NAME" ]]; then
+  echo "Not in Codespaces - skipping Codespaces-specific setup."
+  exit 0
+fi
 
 echo "Exposing ports as public..."
 gh codespace ports visibility 80:public --codespace "${CODESPACE_NAME}"
