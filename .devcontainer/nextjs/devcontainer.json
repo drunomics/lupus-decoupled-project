@@ -41,11 +41,13 @@
   "forwardPorts": [3000, 8080],
   "portsAttributes": {
     "3000": {
-      "label": "Frontend"
+      "label": "Frontend",
+      "visibility": "public"
     },
     "8080": {
       "label": "Backend",
-      "protocol": "http"
+      "protocol": "http",
+      "visibility": "public"
     },
     "3306": {
       "label": "Database"

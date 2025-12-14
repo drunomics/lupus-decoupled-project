@@ -4,19 +4,12 @@ set -e
 # Source environment (BACKEND_URL, FRONTEND_URL)
 source .devcontainer/env.sh
 
-echo "=============================================="
-echo "  Lupus Decoupled - User Setup"
-echo "=============================================="
-
-echo "[1/2] Configuring Codespaces (if applicable)..."
-.devcontainer/setup-codespaces.sh
-
-echo "[2/2] Opening Drupal login..."
+# Generate one-time login URL
 LOGIN_URL=$(ddev drush uli --no-browser)
 
 echo ""
 echo "=============================================="
-echo "  Setup Complete!"
+echo "  Lupus Decoupled - Ready!"
 echo "=============================================="
 echo "  Backend:  ${BACKEND_URL}/user/login"
 echo "  Frontend: ${FRONTEND_URL}"
