@@ -1,6 +1,9 @@
 {
   "name": "Next.js",
   "image": "mcr.microsoft.com/devcontainers/base:debian-12",
+  "hostRequirements": {
+    "cpus": 2
+  },
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
@@ -54,5 +57,6 @@
   "waitFor": "postCreateCommand",
   "onCreateCommand": ".devcontainer/prebuild.sh",
   "postCreateCommand": ".devcontainer/init-project.sh",
-  "postStartCommand": "ddev status >/dev/null 2>&1 || ddev start"
+  "postStartCommand": "ddev status >/dev/null 2>&1 || ddev start",
+  "postAttachCommand": ".devcontainer/show-info.sh"
 }
