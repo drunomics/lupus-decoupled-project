@@ -42,6 +42,11 @@
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       }
+    },
+    "codespaces": {
+      "openFiles": [
+        "USAGE.md"
+      ]
     }
   },
   "forwardPorts": [3000, 8080],

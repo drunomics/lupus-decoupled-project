@@ -215,6 +215,7 @@ composer.lock
 
 # Lupus Decoupled Stuff
 frontend
+/recipes/*
 
 # Allow using local config, version dist file.
 phpcs.xml
