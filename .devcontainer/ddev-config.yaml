@@ -1,6 +1,5 @@
 # DDEV config override for devcontainer environment
 # Copied to config.devcontainer.yaml by prebuild.sh
-# Uses HTTP on port 8080 (avoids privileged ports and HTTPS cert issues)
+# Binds web container directly to port 8080 (bypasses router, avoids privileged ports)
 
-router_http_port: "8080"
-router_https_port: "8443"
+host_webserver_port: "8080"

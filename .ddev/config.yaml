@@ -29,6 +29,8 @@ web_environment:
   - FRONTEND_BRANCH=${FRONTEND_BRANCH-}
   - BACKEND_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
   - FRONTEND_URL=${FRONTEND_URL:-https://lupus-nuxt.ddev.site}
+  # Drush base URL for generated links
+  - DRUSH_OPTIONS_URI=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
   # Frontend env vars - use BACKEND_URL
   - NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
   - NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
