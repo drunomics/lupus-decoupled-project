@@ -45,7 +45,8 @@
   "forwardPorts": [3000, 8080],
   "portsAttributes": {
     "3000": {
-      "label": "Frontend"
+      "label": "Frontend",
+      "onAutoForward": "openPreview"
     },
     "8080": {
       "label": "Backend",

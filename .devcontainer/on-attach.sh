@@ -26,25 +26,19 @@ if [[ -n "$CODESPACE_NAME" ]]; then
   echo "Setting ports to public..."
 
   # Set both ports (gh waits for them automatically)
-  if gh codespace ports visibility 3000:public 8080:public --codespace "$CODESPACE_NAME" 2>&1; then
+  if gh codespace ports visibility 3000:public 8080:public --codespace "$CODESPACE_NAME" >/dev/null 2>&1; then
     echo "✓ Ports set to public"
   else
     echo "✗ Failed to set port visibility"
     echo "Please manually set ports 8080 and 3000 to 'Public' in the Ports tab."
   fi
-
-  # Verify actual port visibility
-  sleep 1
-  echo ""
-  echo "Port status:"
-  gh codespace ports --codespace "$CODESPACE_NAME" | grep -E "(8080|3000)" || true
 fi
 
 echo ""
 echo "=============================================="
 echo "  Lupus Decoupled - Ready!"
 echo "=============================================="
-echo "  Backend:  ${BACKEND_URL}"
+echo "  Backend:  ${BACKEND_URL}/user/login"
 echo "  Frontend: ${FRONTEND_URL}"
 echo "  Login:    admin / lupus123"
 echo "=============================================="
