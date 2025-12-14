@@ -2,11 +2,11 @@
 
 [![Open in GitHub Codespaces](https://img.shields.io/badge/Codespaces-Open-blue?logo=github)](https://codespaces.new/drunomics/lupus-decoupled-project?quickstart=1)
 
-A [ddev](https://ddev.com/) + [devcontainers](https://containers.dev/) enabled decoupled Drupal project template.
+A project template for [Lupus Decoupled](https://lupus-decoupled.org) that makes it easy to run backend and frontend together using [ddev](https://ddev.com/) + [devcontainers](https://containers.dev/).
 
 **Stack:**
 - Backend: Drupal 11 + [Lupus Decoupled](https://lupus-decoupled.org)
-- Frontend: Nuxt (runs via pm2 in the ddev web container)
+- Frontend: Configurable ([Nuxt](https://github.com/drunomics/lupus-decoupled-nuxt-starter)/Next/... - runs via pm2 in the ddev web container)
 - Development: ddev + Docker
 
 ## Quick Start
