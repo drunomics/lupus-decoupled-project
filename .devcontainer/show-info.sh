@@ -41,5 +41,5 @@ echo ""
 # Open one-time login URL in browser
 LOGIN_URL=$(ddev drush uli --no-browser 2>/dev/null || true)
 if [[ -n "$LOGIN_URL" ]]; then
-  code --open-url "$LOGIN_URL" 2>/dev/null || true
+  xdg-open "$LOGIN_URL" 2>/dev/null || true
 fi
