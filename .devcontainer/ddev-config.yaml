@@ -3,3 +3,5 @@
 # Binds web container directly to port 8080 (bypasses router, avoids privileged ports)
 
 host_webserver_port: "8080"
+# Set HTTPS to fixed port (not used, but prevents random port assignment)
+host_https_port: "8443"

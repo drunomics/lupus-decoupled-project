@@ -44,22 +44,11 @@
   "forwardPorts": [3000, 8080],
   "portsAttributes": {
     "3000": {
-      "label": "Frontend",
-      "visibility": "public"
+      "label": "Frontend"
     },
     "8080": {
       "label": "Backend",
-      "protocol": "http",
-      "visibility": "public"
-    },
-    "3306": {
-      "label": "Database"
-    },
-    "8027": {
-      "label": "Mailhog"
-    },
-    "9003": {
-      "label": "Xdebug"
+      "protocol": "http"
     }
   },
   "otherPortsAttributes": {

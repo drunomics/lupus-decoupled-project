@@ -33,7 +33,6 @@ web_environment:
   - DRUSH_OPTIONS_URI=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
   # Frontend env vars - use BACKEND_URL
   - NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
-  - NUXT_PUBLIC_DRUPAL_CE_SERVER_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
   - NEXT_PUBLIC_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
 nodejs_version: "22"
 corepack_enable: false
