@@ -52,8 +52,5 @@ if [[ -n "$LOGIN_URL" ]]; then
 fi
 
 echo ""
-echo "Tips:"
-echo "  - Use 'ddev drush uli' for a one-time login link"
-echo "  - Use 'ddev ssh' to access the web container shell"
-echo "  - Frontend logs are streaming in a separate terminal"
+echo "See USAGE.md for common commands and troubleshooting."
 echo ""

@@ -58,6 +58,7 @@
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
   },
+  "waitFor": "postCreateCommand",
   "onCreateCommand": ".devcontainer/prebuild.sh",
   "postCreateCommand": ".devcontainer/init-project.sh",
   "postAttachCommand": ".devcontainer/on-attach.sh"
