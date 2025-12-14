@@ -1,8 +1,25 @@
 #!/bin/bash
-# Shows project info when user attaches to container
+# Runs when user attaches to the container
+# Starts DDEV, sets port visibility, shows welcome message
 
 # Source environment (BACKEND_URL, FRONTEND_URL)
 source .devcontainer/env.sh
+
+# Start DDEV if not already running and wait for it to be ready
+if ! ddev status >/dev/null 2>&1; then
+  echo "Starting DDEV..."
+  ddev start
+
+  # Wait for ddev to be fully ready (web container responding)
+  echo "Waiting for DDEV to be ready..."
+  for i in {1..60}; do
+    if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/ 2>/dev/null | grep -q "200\|301\|302"; then
+      echo "✓ DDEV is ready"
+      break
+    fi
+    sleep 1
+  done
+fi
 
 # Set port visibility in Codespaces (runs when editor attaches)
 if [[ -n "$CODESPACE_NAME" ]]; then
@@ -31,15 +48,18 @@ echo "  Backend:  ${BACKEND_URL}"
 echo "  Frontend: ${FRONTEND_URL}"
 echo "  Login:    admin / lupus123"
 echo "=============================================="
+
+# Show one-time login link
+LOGIN_URL=$(ddev drush uli --no-browser 2>/dev/null || true)
+if [[ -n "$LOGIN_URL" ]]; then
+  echo ""
+  echo "One-time login link (click to open):"
+  echo "  ${LOGIN_URL}"
+fi
+
 echo ""
 echo "Tips:"
 echo "  - Use 'ddev drush uli' for a one-time login link"
 echo "  - Use 'ddev ssh' to access the web container shell"
 echo "  - Frontend logs are streaming in a separate terminal"
 echo ""
-
-# Open one-time login URL in browser
-LOGIN_URL=$(ddev drush uli --no-browser 2>/dev/null || true)
-if [[ -n "$LOGIN_URL" ]]; then
-  xdg-open "$LOGIN_URL" 2>/dev/null || true
-fi
