@@ -17,7 +17,7 @@ hooks:
     - exec: |
         [[ -d frontend ]] || git clone ${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-starter} ${FRONTEND_BRANCH:+--branch=$FRONTEND_BRANCH} frontend
         cd frontend && npm i
-        pm2 start "npm run dev"
+        pm2 start "npm run dev" --name nuxt
 use_dns_when_possible: true
 composer_version: ""
 web_environment:
