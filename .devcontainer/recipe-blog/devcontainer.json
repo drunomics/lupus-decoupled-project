@@ -15,11 +15,6 @@
     "RECIPES": "../recipes/lupus_decoupled_blog",
     "DDEV_NO_INSTRUMENTATION": "true"
   },
-  "secrets": {
-    "FRONTEND_BRANCH": {
-      "description": "Optional: Override the default frontend branch"
-    }
-  },
   "remoteEnv": {
     "CODESPACE_NAME": "${localEnv:CODESPACE_NAME}"
   },
