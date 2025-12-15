@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Wait for Docker to be ready
+.devcontainer/wait-for-docker.sh
+
 # Source environment (BACKEND_URL, FRONTEND_URL)
 source .devcontainer/env.sh
 
