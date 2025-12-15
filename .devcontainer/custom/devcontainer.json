@@ -1,5 +1,5 @@
 {
-  "name": "Recipe: Demo",
+  "name": "Custom (Advanced)",
   "image": "mcr.microsoft.com/devcontainers/base:debian-12",
   "hostRequirements": {
     "cpus": 2
@@ -10,13 +10,25 @@
     "ghcr.io/ddev/ddev/install-ddev:latest": {}
   },
   "containerEnv": {
-    "FRONTEND_REPOSITORY": "https://github.com/drunomics/lupus-decoupled-nuxt-shadcn",
-    "ADDITIONAL_COMPOSER_PACKAGES": "drupal/drupal_cms_starter",
-    "RECIPES": "../recipes/drupal_cms_starter,../recipes/lupus_decoupled_recipe",
-    "DDEV_NO_INSTRUMENTATION": "true"
+    "DDEV_NO_INSTRUMENTATION": "true",
+    "LUPUS_DECOUPLED_AUTO_ENABLE": "1"
   },
   "remoteEnv": {
     "CODESPACE_NAME": "${localEnv:CODESPACE_NAME}"
+  },
+  "secrets": {
+    "FRONTEND_REPOSITORY": {
+      "description": "Frontend git repository URL. Default: https://github.com/drunomics/lupus-decoupled-nuxt-starter"
+    },
+    "FRONTEND_BRANCH": {
+      "description": "Frontend git branch to use. Leave empty for default branch. Example: main, develop, feature/my-branch"
+    },
+    "ADDITIONAL_COMPOSER_PACKAGES": {
+      "description": "Additional composer packages to install (space-separated). Example: drupal/lupus_decoupled_blog drupal/admin_toolbar"
+    },
+    "RECIPES": {
+      "description": "Drupal recipes to apply (comma-separated). Default: ../recipes/lupus_decoupled_recipe. Example: ../recipes/my_recipe,../recipes/another_recipe"
+    }
   },
   "customizations": {
     "vscode": {

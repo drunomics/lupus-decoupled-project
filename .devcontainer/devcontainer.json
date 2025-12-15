@@ -16,11 +16,6 @@
   "remoteEnv": {
     "CODESPACE_NAME": "${localEnv:CODESPACE_NAME}"
   },
-  "secrets": {
-    "FRONTEND_BRANCH": {
-      "description": "Optional: Override the default frontend branch"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [

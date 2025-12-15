@@ -52,5 +52,5 @@ if [[ -n "$LOGIN_URL" ]]; then
 fi
 
 echo ""
-echo "See USAGE.md for common commands and troubleshooting."
+echo "See USAGE.md for common commands."
 echo ""
