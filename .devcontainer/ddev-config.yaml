@@ -5,3 +5,8 @@
 host_webserver_port: "8080"
 # Set HTTPS to fixed port (not used, but prevents random port assignment)
 host_https_port: "8443"
+
+# Nuxt CDN URL for component preview
+# Required for nuxt-component-preview to detect the correct frontend URL in Codespaces
+web_environment:
+  - NUXT_APP_CDN_URL=${FRONTEND_URL}
