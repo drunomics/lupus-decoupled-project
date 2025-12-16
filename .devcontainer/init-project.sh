@@ -11,14 +11,13 @@ source .devcontainer/env.sh
 echo "Configuring frontend URL: ${FRONTEND_URL}"
 ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url "${FRONTEND_URL}" -y
 
-# Set preview provider to "nuxt" if using a Nuxt frontend
+# Update preview provider to "nuxt" if using a Nuxt frontend.
+# This is done in ddev site-install but the variable might have changed
+# on codespaces after pre-build.
 if [[ "${FRONTEND_REPOSITORY}" == *"nuxt"* ]]; then
   echo "Detected Nuxt frontend, setting preview provider..."
   ddev drush config:set lupus_decoupled_ce_api.settings preview_provider "nuxt" -y
 fi
-
-# Be sure updated URL is applied.
-ddev drush cr
 
 echo ""
 echo "=============================================="
