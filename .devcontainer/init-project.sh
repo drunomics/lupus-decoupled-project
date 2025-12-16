@@ -1,27 +1,11 @@
 #!/bin/bash
 set -e
 
-# Wait for Docker to be ready
-.devcontainer/wait-for-docker.sh
-
 # Source environment (BACKEND_URL, FRONTEND_URL)
 source .devcontainer/env.sh
 
-# Start DDEV if not already running and wait for it to be ready
-if ! ddev status >/dev/null 2>&1; then
-  echo "Starting DDEV..."
-  ddev start
-
-  # Wait for ddev to be fully ready (web container responding)
-  echo "Waiting for DDEV to be ready..."
-  for i in {1..60}; do
-    if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/ 2>/dev/null | grep -q "200\|301\|302"; then
-      echo "✓ DDEV is ready"
-      break
-    fi
-    sleep 1
-  done
-fi
+# Start DDEV (waits for Docker daemon automatically)
+.devcontainer/start-ddev.sh
 
 # Configure frontend URL now that we have the correct CODESPACE_NAME
 echo "Configuring frontend URL: ${FRONTEND_URL}"

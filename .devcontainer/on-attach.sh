@@ -5,33 +5,36 @@
 # Source environment (BACKEND_URL, FRONTEND_URL)
 source .devcontainer/env.sh
 
-# Start DDEV if not already running and wait for it to be ready
-if ! ddev status >/dev/null 2>&1; then
-  echo "Starting DDEV..."
-  ddev start
+.devcontainer/start-ddev.sh
 
-  # Wait for ddev to be fully ready (web container responding)
-  echo "Waiting for DDEV to be ready..."
-  for i in {1..60}; do
-    if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/ 2>/dev/null | grep -q "200\|301\|302"; then
-      echo "✓ DDEV is ready"
+# Set port visibility in Codespaces (runs when editor attaches)
+# For that to work, we need to wait until ports are available in the editor.
+if [[ -n "$CODESPACE_NAME" ]]; then
+  echo "Configuring port visibility..."
+
+  # Wait for ports to be forwarded (up to 30 seconds)
+  for i in {1..30}; do
+    if gh codespace ports --codespace "$CODESPACE_NAME" 2>/dev/null | grep -q "8080"; then
       break
     fi
     sleep 1
   done
-fi
 
-# Set port visibility in Codespaces (runs when editor attaches)
-if [[ -n "$CODESPACE_NAME" ]]; then
-  echo "Setting ports to public..."
+  # Try setting ports to public (retry up to 3 times)
+  for attempt in {1..3}; do
+    gh codespace ports visibility 3000:public 8080:public --codespace "$CODESPACE_NAME" >/dev/null 2>&1
+    sleep 2
 
-  # Set both ports (gh waits for them automatically)
-  if gh codespace ports visibility 3000:public 8080:public --codespace "$CODESPACE_NAME" >/dev/null 2>&1; then
-    echo "✓ Ports set to public"
-  else
-    echo "✗ Failed to set port visibility"
-    echo "Please manually set ports 8080 and 3000 to 'Public' in the Ports tab."
-  fi
+    # Check if both ports are actually public
+    PORTS_STATUS=$(gh codespace ports --codespace "$CODESPACE_NAME" 2>/dev/null | grep -E "(3000|8080)")
+    if ! echo "$PORTS_STATUS" | grep -q "private"; then
+      echo "✓ Ports set to public"
+      break
+    elif [[ $attempt -eq 3 ]]; then
+      echo "⚠ Ports are still private after 3 attempts"
+      echo "Please manually set ports 8080 and 3000 to 'Public' in the Ports tab"
+    fi
+  done
 fi
 
 echo ""
