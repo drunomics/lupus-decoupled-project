@@ -7,6 +7,9 @@ source .devcontainer/env.sh
 # Start DDEV (waits for Docker daemon automatically)
 .devcontainer/start-ddev.sh
 
+# Kick of installation
+ddev site-install
+
 # Configure frontend URL now that we have the correct CODESPACE_NAME
 echo "Configuring frontend URL: ${FRONTEND_URL}"
 ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url "${FRONTEND_URL}" -y
