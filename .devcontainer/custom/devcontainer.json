@@ -26,8 +26,8 @@
     "ADDITIONAL_COMPOSER_PACKAGES": {
       "description": "Additional composer packages to install (space-separated). Example: drupal/lupus_decoupled_blog drupal/admin_toolbar"
     },
-    "RECIPES": {
-      "description": "Drupal recipes to apply (comma-separated). Default: ../recipes/lupus_decoupled_recipe. Example: ../recipes/my_recipe,../recipes/another_recipe"
+    "RECIPE": {
+      "description": "Drupal recipe to install from. Default: ../recipes/lupus_decoupled_recipe/standard (Standard profile + Lupus Decoupled). Example: ../recipes/my_recipe"
     }
   },
   "customizations": {

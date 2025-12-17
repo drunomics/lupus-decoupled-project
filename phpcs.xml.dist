@@ -3,11 +3,12 @@
 <ruleset name="lupus_decoupled">
   <file>./web/modules/contrib/lupus_decoupled</file>
   <file>./web/modules/custom</file>
+  <file>./recipes/lupus_decoupled_recipe</file>
 
   <!-- Exclude -->
   <exclude-pattern>*md</exclude-pattern>
 
-  <arg name="extensions" value="inc,install,module,php,profile,test,theme"/>
+  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
   <arg value="s"/>
 
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal">
