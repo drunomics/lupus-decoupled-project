@@ -58,7 +58,7 @@ ddev exec ./vendor/bin/phpcs      # PHP coding standards
 - Uses `nuxtjs-drupal-ce` module for Drupal Custom Elements integration
 - REST API endpoint /ce-api/<route> for content delivery in JSON
 - Component-based architecture with Vue.js components for Drupal entities
-- Custom elements module has configurable output by view mode. The resulting configuration is managed in config entities, prefixed with "custom_elements.".
+- Custom elements module has configurable output by view mode. The resulting configuration is managed in config entities, prefixed with "custom_elements.enttiy_ce_display.". For example for the "full" view-mode of articles, the config item is "custom_elements.entity_ce_display.node.article.full"
 
 ## Development Environment
 
