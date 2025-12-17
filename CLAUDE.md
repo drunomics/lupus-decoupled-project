@@ -16,8 +16,8 @@ ddev status
 # Start/manage DDEV environment
 ddev start
 ddev composer install
-ddev drush site-install -y --account-pass=admin standard
-ddev drush recipe ../recipes/lupus_decoupled_recipe
+ddev drush site-install -y ../recipes/lupus_decoupled_recipe/standard
+# Note: Admin password is set to 'lupus123' by the install script
 ddev launch /user/login
 
 # Common drush commands via DDEV
@@ -36,8 +36,14 @@ npm run lint-fix     # Fix ESLint issues
 
 ### Testing & Quality
 ```bash
-ddev exec "XDEBUG_MODE=off ./vendor/bin/phpunit <args>"
-ddev exec ./vendor/bin/phpcs      # PHP coding standards
+# Run all recipe tests
+ddev exec ./vendor/bin/phpunit --testsuite=recipes
+
+# Run specific test
+ddev exec ./vendor/bin/phpunit recipes/lupus_decoupled_recipe/tests/src/Functional/GenericStandardTest.php
+
+# PHP coding standards
+ddev exec ./vendor/bin/phpcs
 ```
 
 ## Architecture
