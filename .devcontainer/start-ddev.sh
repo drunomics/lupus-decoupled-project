@@ -1,6 +1,8 @@
 #!/bin/bash
 # Starts DDEV and ensures it's fully ready
 
+DDEV_IS_READY=0
+
 # Wait for Docker daemon to be ready
 echo "Waiting for Docker..."
 while true; do
@@ -20,7 +22,13 @@ echo "Waiting for DDEV to be ready..."
 for i in {1..60}; do
   if curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/ 2>/dev/null | grep -q "200\|301\|302"; then
     echo "✓ DDEV is ready"
+    DDEV_IS_READY=1
     break
   fi
   sleep 1
 done
+
+if [[ DDEV_IS_READY = 0 ]]; then
+  echo "Failed starting ddev. Check creation logs and/or try re-building the codespace."
+  exit 1
+fi

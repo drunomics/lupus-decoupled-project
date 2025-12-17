@@ -20,6 +20,8 @@ echo "[3/3] Starting DDEV and installing Drupal..."
 .devcontainer/start-ddev.sh
 
 ddev site-install
+# Stop here for better consistency of pre-build builds.
+ddev stop
 
 echo ""
 echo "=============================================="
