@@ -17,9 +17,9 @@
     "require": {
         "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "^11.1 || ^10.4",
-        "drupal/core-project-message": "^11.1 || ^10.4",
-        "drupal/core-recommended": "^11.1 || ^10.4",
+        "drupal/core-composer-scaffold": "^11.1",
+        "drupal/core-project-message": "^11.1",
+        "drupal/core-recommended": "11.2.*",
         "drupal/devel": "^5.3",
         "drupal/lupus_decoupled_recipe": "^1.2.0",
         "drupal/responsive_preview": "^2.2",
