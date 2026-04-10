@@ -56,5 +56,3 @@ Multiple configurations available when launching via Codespaces or local devcont
 - **nuxt-shadcn**: Nuxt with shadcn/ui components
 - **nextjs**: Next.js frontend
 - **custom**: Custom (Advanced) - Configure all options via secrets
-- **recipe-blog**: Drupal CMS Blog + Lupus Decoupled (WIP)
-- **recipe-demo**: Drupal CMS Starter + Lupus Decoupled (WIP)
