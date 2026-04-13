@@ -35,7 +35,7 @@ echo "Setting admin password to: lupus123"
 ddev drush user:password admin lupus123
 
 echo "Configuring frontend URL..."
-ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url "${FRONTEND_URL:-https://lupus-nuxt.ddev.site}" -y
+ddev drush config:set lupus_decoupled_ce_api.settings frontend_base_url "${FRONTEND_URL:-http://lupus-nuxt.ddev.site}" -y
 
 # Set preview provider to "nuxt" (default for Nuxt frontends)
 if [[ "${FRONTEND_REPOSITORY}" == *"nuxt"* ]] || [[ -z "${FRONTEND_REPOSITORY}" ]]; then
