@@ -55,4 +55,17 @@ Multiple configurations available when launching via Codespaces or local devcont
 - **Default**: Nuxt Naked - Minimal setup
 - **nuxt-shadcn**: Nuxt with shadcn/ui components
 - **nextjs**: Next.js frontend
+- **cms-nuxt-starter**: Drupal CMS + Lupus Decoupled Starter recipe
 - **custom**: Custom (Advanced) - Configure all options via secrets
+
+## Testing with Drupal CMS
+
+To set up a local environment with [Drupal CMS](https://www.drupal.org/project/cms) and the [Lupus Decoupled Starter](https://www.drupal.org/project/lupus_decoupled_starter) recipe:
+
+```bash
+ddev start
+ddev composer require drupal/cms:^2 drupal/lupus_decoupled_starter:^2.0.0
+RECIPE=../recipes/lupus_decoupled_starter ddev site-install
+```
+
+Or use the **cms-nuxt-starter** devcontainer option which does this automatically.
