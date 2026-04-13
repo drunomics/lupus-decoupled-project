@@ -25,11 +25,11 @@ web_environment:
     - LUPUS_DECOUPLED_AUTO_ENABLE=1
     - FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-starter}
     - FRONTEND_BRANCH=${FRONTEND_BRANCH-}
-    - BACKEND_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
-    - FRONTEND_URL=${FRONTEND_URL:-https://lupus-nuxt.ddev.site}
-    - DRUSH_OPTIONS_URI=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
-    - NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
-    - NEXT_PUBLIC_DRUPAL_BASE_URL=${BACKEND_URL:-https://lupus-decoupled.ddev.site}
+    - BACKEND_URL=${BACKEND_URL:-http://lupus-decoupled.ddev.site}
+    - FRONTEND_URL=${FRONTEND_URL:-http://lupus-nuxt.ddev.site}
+    - DRUSH_OPTIONS_URI=${BACKEND_URL:-http://lupus-decoupled.ddev.site}
+    - NUXT_PUBLIC_DRUPAL_CE_DRUPAL_BASE_URL=${BACKEND_URL:-http://lupus-decoupled.ddev.site}
+    - NEXT_PUBLIC_DRUPAL_BASE_URL=${BACKEND_URL:-http://lupus-decoupled.ddev.site}
 corepack_enable: false
 web_extra_exposed_ports:
     - name: lupus-nuxt

@@ -11,7 +11,7 @@ elif [[ -n "$REMOTE_CONTAINERS" ]]; then
   export BACKEND_URL="http://localhost:8080"
   export FRONTEND_URL="http://localhost:3000"
 else
-  # Regular ddev on host - use HTTPS with ddev.site
-  export BACKEND_URL="${BACKEND_URL:-https://lupus-decoupled.ddev.site}"
-  export FRONTEND_URL="${FRONTEND_URL:-https://lupus-nuxt.ddev.site}"
+  # Regular ddev on host - use HTTP with ddev.site
+  export BACKEND_URL="${BACKEND_URL:-http://lupus-decoupled.ddev.site}"
+  export FRONTEND_URL="${FRONTEND_URL:-http://lupus-nuxt.ddev.site}"
 fi
