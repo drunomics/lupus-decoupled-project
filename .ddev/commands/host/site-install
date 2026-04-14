@@ -19,6 +19,15 @@ echo "Installing Drupal with Lupus Decoupled Standard recipe..."
 RECIPE=${RECIPE:-../recipes/lupus_decoupled_recipe/standard}
 ddev drush si -y --site-name='lupus decoupled' "$RECIPE"
 
+# Apply additional recipes if specified.
+ADDITIONAL_RECIPES=${ADDITIONAL_RECIPES-../recipes/lupus_decoupled_recipe_canvas}
+if [[ -n "$ADDITIONAL_RECIPES" ]]; then
+  for recipe in $ADDITIONAL_RECIPES; do
+    echo "Applying additional recipe: $recipe"
+    ddev drush recipe "$recipe" -y
+  done
+fi
+
 echo "Enabling services_env_parameter..."
 ddev drush en services_env_parameter -y
 
