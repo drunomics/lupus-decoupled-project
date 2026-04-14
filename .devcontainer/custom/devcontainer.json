@@ -11,8 +11,7 @@
   },
   "containerEnv": {
     "ADDITIONAL_RECIPES": "../recipes/lupus_decoupled_recipe_canvas",
-    "DDEV_NO_INSTRUMENTATION": "true",
-    "LUPUS_DECOUPLED_AUTO_ENABLE": "1"
+    "DDEV_NO_INSTRUMENTATION": "true"
   },
   "remoteEnv": {
     "CODESPACE_NAME": "${localEnv:CODESPACE_NAME}"
