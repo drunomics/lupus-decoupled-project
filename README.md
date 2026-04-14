@@ -41,13 +41,15 @@ ddev config --web-environment-add="FRONTEND_REPOSITORY=https://github.com/drunom
 
 ### Auto-enable optional modules
 
-Optional modules (responsive preview, webforms) are auto-enabled when `LUPUS_DECOUPLED_AUTO_ENABLE=1` (default).
+Optional modules (responsive preview, webforms) are auto-enabled when `LUPUS_DECOUPLED_AUTO_ENABLE=1`. By default this is
+disabled. Do not enable this when installing Lupus Decoupled via recipes, configure modules via recipes instead.
 
 ## Documentation
 
 - **Commands**: See [USAGE.md](USAGE.md)
 - **Lupus Decoupled**: https://lupus-decoupled.org
 - **ddev**: https://ddev.readthedocs.io
+- **Recipe**: See [Base Recipe](https://www.drupal.org/project/lupus_decoupled_recipe)
 
 ## Codespaces/Devcontainer Options
 
