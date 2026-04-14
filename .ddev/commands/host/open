@@ -1,0 +1,15 @@
+#!/bin/bash
+
+## Description: Open the project in a browser
+## Usage: open [path]
+
+source .devcontainer/env.sh 2>/dev/null || true
+URL="${BACKEND_URL:-http://lupus-decoupled.ddev.site}${1:+/$1}"
+
+if command -v xdg-open &> /dev/null; then
+  xdg-open "$URL"
+elif command -v open &> /dev/null; then
+  open "$URL"
+else
+  echo "$URL"
+fi
