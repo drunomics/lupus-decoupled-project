@@ -14,6 +14,9 @@
 /web/private/scripts/quicksilver
 /web/private/examples
 
+# Ignore Drupal CMS stuff
+/web/themes/blank
+
 # Ignore transpiled js
 /web/modules/custom/**/js/*.js
 /web/modules/custom/**/js/**/*.js
