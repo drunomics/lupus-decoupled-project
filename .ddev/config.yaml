@@ -22,7 +22,6 @@ web_environment:
     - NUXT_HOST=0.0.0.0
     - NUXT_PORT=3000
     - PHAPP_ENV_MODE=development
-    - LUPUS_DECOUPLED_AUTO_ENABLE=1
     - FRONTEND_REPOSITORY=${FRONTEND_REPOSITORY:-https://github.com/drunomics/lupus-decoupled-nuxt-starter}
     - FRONTEND_BRANCH=${FRONTEND_BRANCH-}
     - BACKEND_URL=${BACKEND_URL:-http://lupus-decoupled.ddev.site}
