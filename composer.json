@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^2.3",
         "cweagans/composer-patches": "^1.7",
+        "drupal/cms": "^2",
         "drupal/core-composer-scaffold": "^11.1",
         "drupal/core-project-message": "^11.1",
         "drupal/core-recommended": "11.3.*",
@@ -25,6 +26,7 @@
         "drupal/lupus_decoupled": "^1.5.1",
         "drupal/lupus_decoupled_recipe": "^2.0",
         "drupal/lupus_decoupled_recipe_canvas": "^1.0",
+        "drupal/lupus_decoupled_starter": "^2.0.0",
         "drupal/responsive_preview": "^2.3.2",
         "drupal/rest_log": "^2.3",
         "drupal/schema_metatag": "^3.0",
@@ -66,6 +68,9 @@
             }
         },
         "patches": {
+            "drupal/custom_elements": {
+                "Add support for Canvas content templates (drupal.org/i/3587388)": "https://git.drupalcode.org/project/custom_elements/-/commit/57495692d7916cf94e2e362527b0682395edf3e0.patch"
+            }
         },
         "installer-paths": {
             "web/core": [
